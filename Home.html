@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Suzz's Gifts</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+* {
+  box-sizing: border-box;
+}
+
+.bg-image{
+	background-image:url('photos/breakfast.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	filter:blur(8px);
+}
+
+div {
+	border:2px solid #4CAF50;
+	padding:0px;
+}
+#transp{
+	opacity:1.0;
+}
+#transp:hover{
+	opacity:0.5;
+}
+
+.itemImg{
+	float:left;
+}
+.clearfix{
+	overflow:auto;
+	margin-left:auto;
+	margin-right:auto;  
+
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div.polaroid {
+  width:100%;
+  height:100%;
+  background-color: white;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 0px;
+  margin-left:auto;
+  margin-right:auto;  
+  
+}
+div.txt_align{
+	text-align:left;
+}
+
+div.background{
+	z-index:-1;
+	filter:blue(35px);
+	background-color:white;
+}
+
+/* Style the header */
+.header {
+  position: fixed;
+  top:0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  z-index: 1;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+	float:center;
+	padding:100px;
+	display:inline-block;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;  	
+}
+.left {
+	width:20%;
+}
+.middle{
+	width:60%;
+	padding:50px;
+}
+.right{
+	width:20%;
+}
+.row:after{
+	content:"";
+	display:table;
+	clear:both;
+}
+
+.rectangle{
+	top:25px;
+	margin-left:auto;
+	margin-right:auto;
+	height: 300px;
+	width:850px;
+	background-color:#000000;
+	border:3px solid white;
+}
+
+.circle{
+	height:50px;
+	width:50px;
+	background-color:#9752f9;
+	border:40px;
+	border-radius:50%;
+	display:inline-block;
+}
+
+
+img{
+	display:block;
+	border:5px solid #FFFFFF;
+	border-radius:0px;
+	padding:0px;
+	top:0px;
+	margin-left:auto;
+	margin-right:auto;  	
+
+
+}
+#images{
+	text-align:center;
+	padding:20px;
+}
+#images div {
+	flex:1;
+}
+
+.itemLogo{
+	opacity:1.0;
+	transition:.5s ease;
+}
+
+.imageAlign{
+	vertical-align:middle;
+}
+
+/* Style the footer */
+.footer {
+	position: fixed;
+	bottom:0;
+	background-color: #FF9D8E;
+	padding: 10px;
+	width: 100%;
+	text-align: center;
+}
+
+.container{
+	position:relative;
+	text-align:center;
+}
+
+.centered{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	transition: .5s ease;
+	opacity:0;
+}
+
+.container:hover .centered{
+	opacity: 1;
+}
+
+.container:hover .itemLogo{
+	opacity:0.2
+}
+
+.textCenter{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+}
+
+</style>
+</head>
+<body style="background-image:url('photos/background.png');background-repeat: no-repeat;background-attachment: fixed;background-size:2000px 3000px;">
+
+
+<div class="header">
+	<div class="container" style="width:200px;height:200px;display:inline-block;margin:auto">
+		<div>
+			<img class="itemLogo" src="photos/Suzz_logo.png" style="width:200px;height:200px">
+		</div>
+	</div>
+</div>
+
+<div class="nav"></div>
+
+<div class="row">
+
+  <div class="column left">
+  </div>
+  
+  <div class="column middle" style="background-image:url('photos/whitle_bg_op_0_2.png')">
+	<div>
+	<div>
+		<div class="polaroid"><img src="photos/header.png" style="width:100%;height:100%"></div>
+	</div>
+	<p id="top" style="font-size:30px;color:black">WHAT WE MAKE</p>
+	<div>
+		<div class="container" style="width:200px;height:200px;display:inline-block;margin:auto">
+			<div>
+				<a href="#gift_box">
+					<img class="itemLogo" src="photos/gift_box.png" style="width:200px;height:200px">
+				</a>
+			</div>
+			<a href="#gift_box">
+				<div class="centered"><p style="font-size:20px;color:black"><b>Gift Box</b></p></div>
+			</a>
+		</div>
+		<div class="container" style="width:200px;height:200px;display:inline-block;margin:auto">
+			<div>
+				<a href="#gift_cake">
+					<img class="itemLogo" src="photos/gift_cake.png" style="width:200px;height:200px">
+				</a>
+			</div>
+			<a href="#gift_cake">
+				<div class="centered"><p style="font-size:20px;color:black"><b>Gift Cake</b></p></div>
+			</a>
+		</div>
+		<div class="container" style="width:200px;height:200px;display:inline-block;margin:auto">
+			<div>
+				<a href="#gift_bucket">
+					<img class="itemLogo" src="photos/gift_bucket.png" style="width:200px;height:200px">
+				</a>
+			</div>
+			<a href="#gift_bucket">
+				<div class="centered"><p style="font-size:20px;color:black"><b>Gift Bucket</b></p></div>
+			</a>
+		</div>
+		<div class="container" style="width:200px;height:200px;display:inline-block;margin:auto">
+			<div>
+				<a href="#am_pm_board">
+					<img class="itemLogo" src="photos/am_pm_board.png" style="width:200px;height:200px">
+				</a>
+			</div>
+			<a href="#am_pm_board">
+				<div class="centered"><p style="font-size:20px;color:black"><b>AM PM Board</b></p></div>
+			</a>
+		</div>
+		<div class="container" style="width:200px;height:200px;display:inline-block;margin:auto">
+			<div>
+				<a href="#breakfast_tray">
+					<img class="itemLogo" src="photos/breakfast_tray.png" style="width:200px;height:200px">
+				</a>
+			</div>
+			<a href="#breakfast_tray">
+				<div class="centered"><p style="font-size:20px;color:black"><b>Breakfast Tray</b></p></div>
+			</a>
+		</div>
+		<div class="container" style="width:200px;height:200px;display:inline-block;margin:auto">
+			<div>
+				<a href="#back_to_school">
+					<img class="itemLogo" src="photos/back_to_school.png" style="width:200px;height:200px">
+				</a>
+			</div>
+			<a href="#back_to_school">
+				<div class="centered"><p style="font-size:20px;color:black"><b>Back to School</b></p></div>
+			</a>
+		</div>
+		<div class="container" style="width:200px;height:200px;display:inline-block;margin:auto">
+			<div>
+				<a href="#add">
+					<img class="itemLogo" src="photos/add.png" style="width:200px;height:200px">
+				</a>
+			</div>
+			<a href="#add">
+				<div class="centered"><p style="font-size:20px;color:black"><b>Additional</b></p></div>
+			</a>
+		</div>
+	</div>
+
+	<p id="gift_box" style="font-size:30px;color:black">GIFT BOX</p>
+	<p style="font-size:15px;color:black"><a href="#top">BACK TOP</a></p>
+	<div class="clearfix" style="width:70%;padding:20px">
+		<img class="itemImg" src="photos/box1.png" style="width:200px;height:200px;margin-right:10px">
+		<div class="txt_align" style="width:100%;height:200px">
+			<p><b>OPTION #1 ($100)</b></p>
+			<li>White box</li>
+			<li>Bouquet of roses 1 or 2 colors. (Your choice of color)</li>
+			<li>Strawberries with chocolate (qty 10)</li>
+			<li>Photo frame with 4x6 photo</li>
+			<li>Ribbon (your choice of color)</li>
+			<li>Personalized short message</li>		
+		</div>
+	</div>
+	
+	<div class="clearfix" style="width:70%;padding:20px">
+		<img class="itemImg" src="photos/box2.png" style="width:200px;height:200px;margin-right:10px">
+		<div class="txt_align" style="width:100%;height:200px">
+			<p><b>OPTION #2 ($120)</b></p>
+			<li>White box																			</li>
+			<li>Bouquet of mixed flowers. (Your choice of color)									</li>
+			<li>Mini cheesecake (Choice of flavor, otherwise classic Philadelphia with cherry)		</li>
+			<li>Pina Colada mix (or another cocktail mix if preferred)								</li>
+			<li>Mini bottle of Rum (can be changed depending on the choice of cocktail)				</li>
+			<li>Personalized short message															</li>
+			<li>2 small candles																		</li>
+			<li>Personalized bottle for the cocktail mix with the name of the person				</li>
+			<li>One big latex ballon with 3 small ballons inside and one regular ballon				</li>
+		</div>
+	</div>
+
+	<div class="clearfix" style="width:70%;padding:20px">
+		<img class="itemImg" src="photos/box3.png" style="width:200px;height:200px;margin-right:10px">
+		<div class="txt_align" style="width:100%">
+			<p><b>OPTION #3 ($175)</b></p>
+			<li>Heart shaped box (color customizable)</li>	
+			<li>Bouquet of mixed flowers (choice of color)</li>	
+			<li>Bottle of alcohol of choosing (optional)</li>	
+			<li>Personalized short message</li>	
+			<li>12 Ferrero Rocher chocolates</li>	
+			<br>
+			(Alcohol can be replaced with any mini cake if preferred)			
+		</div>
+	</div>
+
+	<div class="clearfix" style="width:70%;padding:20px">
+		<img class="itemImg" src="photos/box4.png" style="width:200px;height:200px;margin-right:10px">
+		<div class="txt_align" style="width:100%">
+			<p><b>OPTION #4 ($75)</b></p>			
+			<li>White box
+			<li>Bouquet of flowers (choice of flower
+			<li>9 Ferrero Rocher chocolates
+			<li>Decorative ribbon (choice of colors)
+			<li>2 Photos
+			<li>2 Ballons
+			<li>Happy birthday sign (optional) 
+		</div>
+	</div>
+
+	<div class="clearfix" style="width:70%;padding:20px">
+		<img class="itemImg" src="photos/box5.png" style="width:200px;height:200px;margin-right:10px">
+		<div class="txt_align" style="width:100%">
+			<p><b>OPTION #5 ($75)</b></p>
+			<li>White box</li>		
+			<li>12 Alfajores</li>		
+			<li>Nutella</li>		
+			<li>Mini snikers, twix, hersheys and reeses cups</li>		
+			<li>Mini bottle of Jack Daniels</li>		
+			<li>Can of coca cola</li>		
+		</div>
+	</div>
+
+	<div class="clearfix" style="width:70%;padding:20px">
+		<img class="itemImg" src="photos/box6.png" style="width:200px;height:200px;margin-right:10px">
+		<div class="txt_align" style="width:100%;height:200px">
+			<p><b>OPTION #6 ($125)</b></p>	
+			<li>White box</li>		
+			<li>Wooden board</li>		
+			<li>Cold cuts (salami, peperoni, chorizo, prosciutto)</li>		
+			<li>Cheese (cheedar, swiz, gouda, monterrey jack)</li>		
+			<li>Grapes (or any fruit of choice)</li>		
+			<li>Spread cheese </li>		
+			<li>Crakers</li>		
+			<li>Hummus</li>		
+			<li>Bottle of wine</li>			
+			<li>Decorative picnic cloth (choice of color)</li>		
+			<li>Decorative ribbon (choice of color)			</li>		
+		</div>
+	</div>
+
+	<p id="gift_cake" style="font-size:30px;color:black">GIFT CAKE</p>
+	<p style="font-size:15px;color:black"><a href="#top">BACK TOP</a></p>
+	<div class="clearfix" style="width:70%;padding:20px">
+		<img class="itemImg" src="photos/cake1.png" style="width:200px;height:200px;margin-right:10px">
+		<div class="txt_align" style="width:100%">
+			<p><b>BEER CAKE ($150)</b></p>			
+			<li>24 Beers</li>
+			<li>Mini bottles of alcohol (by choice)</li>
+			<li>Decorative ribbon (choice of color)</li>
+			<li>Number candles</li>
+			<li>Party horns</li>
+			<li>Name sign with wooden letters (choice of color)</li>
+			<li>3 tier cake structure</li>
+		</div>
+	</div>
+
+	<div class="clearfix" style="width:70%;padding:20px">
+		<img class="itemImg" src="photos/cake2.png" style="width:200px;height:200px;margin-right:10px">
+		<div class="txt_align" style="width:100%">
+			<p><b>DIAPER CAKE ($175)</b></p>
+			<li>3 tier cake structure</li>
+			<li>Diapers</li>
+			<li>Baby blanket</li>
+			<li>Baby oil, whipes and soap</li>
+			<li>3 pairs of baby socks</li>
+			<li>Mini portrait with baby photo</li>
+			<li>Stuffed toy or pillow</li>
+			<li>Decorative ribbon (choice of color)</li>
+		</div>
+	</div>	
+	
+	<p id="gift_bucket" style="font-size:30px;color:black">GIFT BUCKET</p>
+	<p style="font-size:15px;color:black"><a href="#top">BACK TOP</a></p>
+	<div class="clearfix" style="width:70%;padding:20px">
+		<img class="itemImg" src="photos/gift_bucket.png" style="width:200px;height:200px;margin-right:10px">
+		<div class="txt_align" style="width:100%">
+			<p><b>OPTION#1 ($110)</b></p>
+			<li>Ice bucket</li>
+			<li>Personalized monogram</li>
+			<li>Decorative bucket filling (choice of color)</li>
+			<li>3 photos</li>
+			<li>2 champagne glasses (initials on the glasses)</li>
+			<li>Bottle of champagne or sparkling wine (optional)</li>
+			<li>Mini wish bottles (personalized messages)</li>				
+		</div>
+	</div>	
+
+	<div class="clearfix" style="width:70%;padding:20px">
+		<img class="itemImg" src="photos/gift_bucket.png" style="width:200px;height:200px;margin-right:10px">
+		<div class="txt_align" style="width:100%;height:50px">
+			<p><b>OPTION#2 ($200)</b></p>			
+			<li>Ice bucket</li>
+			<li>"I love you" vynil decorative design on the bucket (customizable)</li>
+			<li>Bouquet of flowers (choice of flowers)</li>
+			<li>Bottle of alcohol (by choice)</li>
+			<li>Alfajores</li>
+			<li>Personalized photo album</li>
+			<li>Ferrero Rocher chocolates</li>
+			<li>Heart balloon with personalized inscription</li>
+			<li>Helium balloon (optional)</li>
+		</div>
+	</div>		
+
+	<p id="am_pm_board" style="font-size:30px;color:black">AM PM BOARD</p>
+	<p style="font-size:15px;color:black"><a href="#top">BACK TOP</a></p>
+	<div class="clearfix" style="width:70%;padding:20px">
+		<img class="itemImg" src="photos/am_pm_board.png" style="width:200px;height:200px;margin-right:10px">
+		<div class="txt_align" style="width:100%;height:50px">
+			<p><b>OPTION#1 ($125)</b></p>						
+			<li>Wooden board</li>
+			<li>7 Photos</li>
+			<li>2 Muggs</li>
+			<li>2 Wine glasses (initials on glasses</li>
+			<li>Personalized message</li>
+		</div>
+	</div>		
+	
+	<p id="breakfast_tray" style="font-size:30px;color:black">BREAKFAST TRAY</p>
+	<p style="font-size:15px;color:black"><a href="#top">BACK TOP</a></p>
+	<div class="clearfix" style="width:70%;padding:20px">
+		<img class="itemImg" src="photos/breakfast_tray.png" style="width:200px;height:200px;margin-right:10px">
+		<div class="txt_align" style="width:100%;height:50px">
+			<p><b>OPTION#1 ($150)</b></p>									
+			<li>Breakfast tray</li>
+			<li>Pancakes or french toast</li>
+			<li>Strawberries with chocolate</li>
+			<li>2 glasses of wine (names on glasses)</li>
+			<li>Orange juice</li>
+			<li>Hot chocolate or coffee</li>
+			<li>Bottle of wine</li>
+			<li>Bouquet of flowers (by choice)</li>
+			<li>Helium ballons with message (optional)</li>
+			<li>Decorative ribbon (choice of color)</li>
+		</div>
+	</div>		
+	
+	<p id="back_to_school" style="font-size:30px;color:black">BACK TO SCHOOL</p>
+	<p style="font-size:15px;color:black"><a href="#top">BACK TOP</a></p>
+	<div class="clearfix" style="width:70%;padding:20px">
+		<img class="itemImg" src="photos/breakfast_tray.png" style="width:200px;height:200px;margin-right:10px">
+		<div class="txt_align" style="width:100%;height:50px">
+			<p><b>OPTION#1 ($125)</b></p>												
+			<li>White box decorated as an animal (personalized name on box)</li>
+			<li>2 sock puppets</li>
+			<li>T-shirt</li>
+			<li>Backpack</li>
+			<li>Water bottle</li>
+			<li>Stickers booklet</li>
+			<li>Crayola markers and crayons</li>
+			<li>Coloring book</li>
+			<li>Non toxic glue</li>
+		</div>
+	</div>		
+	
+	<p id="add" style="font-size:30px;color:black">ADDITIONAL</p>
+	<p style="font-size:15px;color:black"><a href="#top">BACK TOP</a></p>
+	<div class="clearfix" style="width:70%;padding:20px">
+		<img class="itemImg" src="photos/add.png" style="width:200px;height:200px;margin-right:10px">
+		<div class="txt_align" style="width:100%;height:50px">
+			<p><b>+$25</b></p>												
+			<li>CREAM CHEESE SWIRLED COCONUT TRES LECHES CAKE</li>
+			<li>LEMON POPPY SEED AND BLUEBERRY CAKE</li>
+			<li>OTHER CAKES ALSO AVAILABLE UPON REQUEST</li>
+		</div>
+	</div>		
+  </div>
+  </div>
+  <div class="column right">
+  </div>
+</div>
+
+
+<nav class="floating-menu">
+<!-- News! -->
+</nav>
+
+
+<div class="footer">
+	<div class="container">
+		<div>
+			<img src="photos/footer.png" style="width:50%;height:100%">
+		</div>
+		<div class="textCenter">
+			<div>
+					<ul style="list-style-type:none">
+						<li style="font-size:15px;font-size:2vw;"><b>Contact Us</b></li>
+						<li style="font-size:15px;font-size:1vw;">Mobile: (416) 274-6759</li>
+						<li style="font-size:15px;font-size:1vw;">Mobile: (647) 573-1821</li>
+						<li style="font-size:15px;font-size:1vw;">Email: suzzgifts@gmail.com</li>
+						<li style="font-size:15px;font-size:1vw;">Instagram @suzz_gifts</li>
+					</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
