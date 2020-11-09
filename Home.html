@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+html, body{
+	height:100%;
+}
+
 .bg-image{
 	background-image:url('photos/breakfast.jpg');
 	background-repeat: no-repeat;
@@ -17,7 +21,7 @@
 }
 
 div {
-	border:0px solid #4CAF50;
+	border:2px solid #4CAF50;
 	padding:0px;
 }
 #transp{
@@ -42,17 +46,18 @@ body {
 }
 
 div.polaroid {
-  width:100%;
-  height:100%;
-  background-color: white;
-  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 0px;
-  margin-left:auto;
-  margin-right:auto;  
+	width:100%;
+	height:100%;
+	background-color: white;
+	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+	margin-bottom: 0px;
+	margin-left:auto;
+	margin-right:auto;  
   
 }
 div.txt_align{
 	text-align:left;
+	font-size:1vw;
 }
 
 div.background{
@@ -63,7 +68,6 @@ div.background{
 
 /* Style the header */
 .header {
-  position: fixed;
   top:0;
   width: 100%;
   padding: 10px;
@@ -72,24 +76,37 @@ div.background{
   z-index: 1;
 }
 
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
 /* Create three unequal columns that floats next to each other */
 .column {
+	-ms-flex:25%;
+	position:relative;
 	float:center;
 	padding:100px;
 	display:inline-block;
 	text-align:center;
 	margin-left:auto;
-	margin-right:auto;  	
+	margin-right:auto;  
+	flex:25%;
 }
 .left {
-	width:20%;
+	width:0%;
+	z-index:-1;
+	display: none;
 }
 .middle{
-	width:60%;
 	padding:50px;
 }
 .right{
-	width:20%;
+	width:0%;
+	z-index:-1;
+	display: none;
 }
 .row:after{
 	content:"";
@@ -137,6 +154,10 @@ img{
 }
 
 .itemLogo{
+	width:50%;
+	height:50%;
+	width:15vw;
+	height:auto
 	opacity:1.0;
 	transition:.5s ease;
 }
@@ -149,11 +170,12 @@ img{
 .footer {
 	position: fixed;
 	bottom:0;
-	background-color: #FF9D8E;
+	background-color: #FFFFFF;
 	padding: 10px;
 	width: 100%;
 	text-align: center;
 }
+
 
 .container{
 	position:relative;
@@ -186,108 +208,114 @@ img{
 
 </style>
 </head>
-<body style="background-image:url('photos/background.png');background-repeat: no-repeat;background-attachment: fixed;background-size:2000px 3000px;">
+<body style="background-color:white">
 
 
 <div class="header">
-	<div class="container" style="width:200px;height:200px;display:inline-block;margin:auto">
-		<div>
-			<img class="itemLogo" src="photos/Suzz_logo.png" style="width:200px;height:200px">
-		</div>
-	</div>
+	<ul style="list-style-type:none">
+		<li style="font-size:50px;font-size:2vw;"><b>Suzz's Gift</b></li>
+		<li style="font-size:15px;font-size:1vw;">Personalized gifts for your loved ones</li>
+	</ul>
 </div>
 
-<div class="nav"></div>
+<div class="nav">
+</div>
+
 
 <div class="row">
 
   <div class="column left">
   </div>
   
-  <div class="column middle" style="background-image:url('photos/whitle_bg_op_0_2.png')">
+  <div class="column middle" style="background-color:white">
+	
 	<div>
-	<div>
-		<div class="polaroid"><img src="photos/header.png" style="width:100%;height:100%"></div>
+		<div class="polaroid">
+			<img src="photos/christmas_logo.png" style="width:100%;height:100%">
+		</div>
 	</div>
-	<p id="top" style="font-size:30px;color:black">WHAT WE MAKE</p>
+	
+	
+	
+	<p id="top" style="font-size:25px;color:black">WHAT WE MAKE</p>
 	<div>
-		<div class="container" style="width:200px;height:200px;display:inline-block;margin:auto">
+		<div class="container" style="display:inline-block">
 			<div>
 				<a href="#gift_box">
-					<img class="itemLogo" src="photos/gift_box.png" style="width:200px;height:200px">
+					<img class="itemLogo" src="photos/gift_box.png" style="width:15vw;height:auto">
 				</a>
 			</div>
 			<a href="#gift_box">
-				<div class="centered"><p style="font-size:20px;color:black"><b>Gift Box</b></p></div>
+				<div class="centered"><p style="font-size:2vw;color:black"><b>Gift Box</b></p></div>
 			</a>
 		</div>
-		<div class="container" style="width:200px;height:200px;display:inline-block;margin:auto">
+		<div class="container" style="display:inline-block">
 			<div>
 				<a href="#gift_cake">
-					<img class="itemLogo" src="photos/gift_cake.png" style="width:200px;height:200px">
+					<img class="itemLogo" src="photos/gift_cake.png" style="width:15vw;height:auto">
 				</a>
 			</div>
 			<a href="#gift_cake">
-				<div class="centered"><p style="font-size:20px;color:black"><b>Gift Cake</b></p></div>
+				<div class="centered"><p style="font-size:2vw;color:black"><b>Gift Cake</b></p></div>
 			</a>
 		</div>
-		<div class="container" style="width:200px;height:200px;display:inline-block;margin:auto">
+		<div class="container" style="display:inline-block">
 			<div>
 				<a href="#gift_bucket">
-					<img class="itemLogo" src="photos/gift_bucket.png" style="width:200px;height:200px">
+					<img class="itemLogo" src="photos/gift_bucket.png" style="width:15vw;height:auto">
 				</a>
 			</div>
 			<a href="#gift_bucket">
-				<div class="centered"><p style="font-size:20px;color:black"><b>Gift Bucket</b></p></div>
+				<div class="centered"><p style="font-size:2vw;color:black"><b>Gift Bucket</b></p></div>
 			</a>
 		</div>
-		<div class="container" style="width:200px;height:200px;display:inline-block;margin:auto">
+		<div class="container" style="display:inline-block">
 			<div>
 				<a href="#am_pm_board">
-					<img class="itemLogo" src="photos/am_pm_board.png" style="width:200px;height:200px">
+					<img class="itemLogo" src="photos/am_pm_board.png" style="width:15vw;height:auto">
 				</a>
 			</div>
 			<a href="#am_pm_board">
-				<div class="centered"><p style="font-size:20px;color:black"><b>AM PM Board</b></p></div>
+				<div class="centered"><p style="font-size:2vw;color:black"><b>AM PM Board</b></p></div>
 			</a>
 		</div>
-		<div class="container" style="width:200px;height:200px;display:inline-block;margin:auto">
+		<div class="container" style="display:inline-block">
 			<div>
 				<a href="#breakfast_tray">
-					<img class="itemLogo" src="photos/breakfast_tray.png" style="width:200px;height:200px">
+					<img class="itemLogo" src="photos/breakfast_tray.png" style="width:15vw;height:auto">
 				</a>
 			</div>
 			<a href="#breakfast_tray">
-				<div class="centered"><p style="font-size:20px;color:black"><b>Breakfast Tray</b></p></div>
+				<div class="centered"><p style="font-size:2vw;color:black"><b>Breakfast Tray</b></p></div>
 			</a>
 		</div>
-		<div class="container" style="width:200px;height:200px;display:inline-block;margin:auto">
+		<div class="container" style="display:inline-block">
 			<div>
 				<a href="#back_to_school">
-					<img class="itemLogo" src="photos/back_to_school.png" style="width:200px;height:200px">
+					<img class="itemLogo" src="photos/back_to_school.png" style="width:15vw;height:auto">
 				</a>
 			</div>
 			<a href="#back_to_school">
-				<div class="centered"><p style="font-size:20px;color:black"><b>Back to School</b></p></div>
+				<div class="centered"><p style="font-size:2vw;color:black"><b>Back to School</b></p></div>
 			</a>
 		</div>
-		<div class="container" style="width:200px;height:200px;display:inline-block;margin:auto">
+		<div class="container" style="display:inline-block">
 			<div>
 				<a href="#add">
-					<img class="itemLogo" src="photos/add.png" style="width:200px;height:200px">
+					<img class="itemLogo" src="photos/add.png" style="width:15vw;height:auto">
 				</a>
 			</div>
 			<a href="#add">
-				<div class="centered"><p style="font-size:20px;color:black"><b>Additional</b></p></div>
+				<div class="centered"><p style="font-size:2vw;color:black"><b>Additional</b></p></div>
 			</a>
 		</div>
 	</div>
 
-	<p id="gift_box" style="font-size:30px;color:black">GIFT BOX</p>
+	<p id="gift_box" style="font-size:25px;color:black">GIFT BOX</p>
 	<p style="font-size:15px;color:black"><a href="#top">BACK TOP</a></p>
-	<div class="clearfix" style="width:70%;padding:20px">
-		<img class="itemImg" src="photos/box1.png" style="width:200px;height:200px;margin-right:10px">
-		<div class="txt_align" style="width:100%;height:200px">
+	<div class="clearfix" style="padding:20px">
+		<img class="itemImg" src="photos/box1.png" style="width:15vw;height:auto">
+		<div class="txt_align">
 			<p><b>OPTION #1 ($100)</b></p>
 			<li>White box</li>
 			<li>Bouquet of roses 1 or 2 colors. (Your choice of color)</li>
@@ -298,9 +326,9 @@ img{
 		</div>
 	</div>
 	
-	<div class="clearfix" style="width:70%;padding:20px">
-		<img class="itemImg" src="photos/box2.png" style="width:200px;height:200px;margin-right:10px">
-		<div class="txt_align" style="width:100%;height:200px">
+	<div class="clearfix" style="padding:20px">
+		<img class="itemImg" src="photos/box2.png" style="width:15vw;height:auto">
+		<div class="txt_align">
 			<p><b>OPTION #2 ($120)</b></p>
 			<li>White box																			</li>
 			<li>Bouquet of mixed flowers. (Your choice of color)									</li>
@@ -314,9 +342,9 @@ img{
 		</div>
 	</div>
 
-	<div class="clearfix" style="width:70%;padding:20px">
-		<img class="itemImg" src="photos/box3.png" style="width:200px;height:200px;margin-right:10px">
-		<div class="txt_align" style="width:100%">
+	<div class="clearfix" style="padding:20px">
+		<img class="itemImg" src="photos/box3.png" style="width:15vw;height:auto">
+		<div class="txt_align">
 			<p><b>OPTION #3 ($175)</b></p>
 			<li>Heart shaped box (color customizable)</li>	
 			<li>Bouquet of mixed flowers (choice of color)</li>	
@@ -328,9 +356,9 @@ img{
 		</div>
 	</div>
 
-	<div class="clearfix" style="width:70%;padding:20px">
-		<img class="itemImg" src="photos/box4.png" style="width:200px;height:200px;margin-right:10px">
-		<div class="txt_align" style="width:100%">
+	<div class="clearfix" style="padding:20px">
+		<img class="itemImg" src="photos/box4.png" style="width:15vw;height:auto">
+		<div class="txt_align">
 			<p><b>OPTION #4 ($75)</b></p>			
 			<li>White box
 			<li>Bouquet of flowers (choice of flower
@@ -342,9 +370,9 @@ img{
 		</div>
 	</div>
 
-	<div class="clearfix" style="width:70%;padding:20px">
-		<img class="itemImg" src="photos/box5.png" style="width:200px;height:200px;margin-right:10px">
-		<div class="txt_align" style="width:100%">
+	<div class="clearfix" style="padding:20px">
+		<img class="itemImg" src="photos/box5.png" style="width:15vw;height:auto">
+		<div class="txt_align">
 			<p><b>OPTION #5 ($75)</b></p>
 			<li>White box</li>		
 			<li>12 Alfajores</li>		
@@ -355,9 +383,9 @@ img{
 		</div>
 	</div>
 
-	<div class="clearfix" style="width:70%;padding:20px">
-		<img class="itemImg" src="photos/box6.png" style="width:200px;height:200px;margin-right:10px">
-		<div class="txt_align" style="width:100%;height:200px">
+	<div class="clearfix" style="padding:20px">
+		<img class="itemImg" src="photos/box6.png" style="width:15vw;height:auto">
+		<div class="txt_align">
 			<p><b>OPTION #6 ($125)</b></p>	
 			<li>White box</li>		
 			<li>Wooden board</li>		
@@ -373,11 +401,11 @@ img{
 		</div>
 	</div>
 
-	<p id="gift_cake" style="font-size:30px;color:black">GIFT CAKE</p>
+	<p id="gift_cake" style="font-size:25px;color:black">GIFT CAKE</p>
 	<p style="font-size:15px;color:black"><a href="#top">BACK TOP</a></p>
-	<div class="clearfix" style="width:70%;padding:20px">
-		<img class="itemImg" src="photos/cake1.png" style="width:200px;height:200px;margin-right:10px">
-		<div class="txt_align" style="width:100%">
+	<div class="clearfix" style="padding:20px">
+		<img class="itemImg" src="photos/cake1.png" style="width:15vw;height:auto">
+		<div class="txt_align">
 			<p><b>BEER CAKE ($150)</b></p>			
 			<li>24 Beers</li>
 			<li>Mini bottles of alcohol (by choice)</li>
@@ -389,9 +417,9 @@ img{
 		</div>
 	</div>
 
-	<div class="clearfix" style="width:70%;padding:20px">
-		<img class="itemImg" src="photos/cake2.png" style="width:200px;height:200px;margin-right:10px">
-		<div class="txt_align" style="width:100%">
+	<div class="clearfix" style="padding:20px">
+		<img class="itemImg" src="photos/cake2.png" style="width:15vw;height:auto">
+		<div class="txt_align">
 			<p><b>DIAPER CAKE ($175)</b></p>
 			<li>3 tier cake structure</li>
 			<li>Diapers</li>
@@ -404,11 +432,11 @@ img{
 		</div>
 	</div>	
 	
-	<p id="gift_bucket" style="font-size:30px;color:black">GIFT BUCKET</p>
+	<p id="gift_bucket" style="font-size:25px;color:black">GIFT BUCKET</p>
 	<p style="font-size:15px;color:black"><a href="#top">BACK TOP</a></p>
-	<div class="clearfix" style="width:70%;padding:20px">
-		<img class="itemImg" src="photos/gift_bucket.png" style="width:200px;height:200px;margin-right:10px">
-		<div class="txt_align" style="width:100%">
+	<div class="clearfix" style="padding:20px">
+		<img class="itemImg" src="photos/gift_bucket.png" style="width:15vw;height:auto">
+		<div class="txt_align">
 			<p><b>OPTION#1 ($110)</b></p>
 			<li>Ice bucket</li>
 			<li>Personalized monogram</li>
@@ -420,9 +448,9 @@ img{
 		</div>
 	</div>	
 
-	<div class="clearfix" style="width:70%;padding:20px">
-		<img class="itemImg" src="photos/gift_bucket.png" style="width:200px;height:200px;margin-right:10px">
-		<div class="txt_align" style="width:100%;height:50px">
+	<div class="clearfix" style="padding:20px">
+		<img class="itemImg" src="photos/gift_bucket.png" style="width:15vw;height:auto">
+		<div class="txt_align">
 			<p><b>OPTION#2 ($200)</b></p>			
 			<li>Ice bucket</li>
 			<li>"I love you" vynil decorative design on the bucket (customizable)</li>
@@ -436,11 +464,11 @@ img{
 		</div>
 	</div>		
 
-	<p id="am_pm_board" style="font-size:30px;color:black">AM PM BOARD</p>
+	<p id="am_pm_board" style="font-size:25px;color:black">AM PM BOARD</p>
 	<p style="font-size:15px;color:black"><a href="#top">BACK TOP</a></p>
-	<div class="clearfix" style="width:70%;padding:20px">
-		<img class="itemImg" src="photos/am_pm_board.png" style="width:200px;height:200px;margin-right:10px">
-		<div class="txt_align" style="width:100%;height:50px">
+	<div class="clearfix" style="padding:20px">
+		<img class="itemImg" src="photos/am_pm_board.png" style="width:15vw;height:auto">
+		<div class="txt_align">
 			<p><b>OPTION#1 ($125)</b></p>						
 			<li>Wooden board</li>
 			<li>7 Photos</li>
@@ -450,11 +478,11 @@ img{
 		</div>
 	</div>		
 	
-	<p id="breakfast_tray" style="font-size:30px;color:black">BREAKFAST TRAY</p>
+	<p id="breakfast_tray" style="font-size:25px;color:black">BREAKFAST TRAY</p>
 	<p style="font-size:15px;color:black"><a href="#top">BACK TOP</a></p>
-	<div class="clearfix" style="width:70%;padding:20px">
-		<img class="itemImg" src="photos/breakfast_tray.png" style="width:200px;height:200px;margin-right:10px">
-		<div class="txt_align" style="width:100%;height:50px">
+	<div class="clearfix" style="padding:20px">
+		<img class="itemImg" src="photos/breakfast_tray.png" style="width:15vw;height:auto">
+		<div class="txt_align">
 			<p><b>OPTION#1 ($150)</b></p>									
 			<li>Breakfast tray</li>
 			<li>Pancakes or french toast</li>
@@ -469,11 +497,11 @@ img{
 		</div>
 	</div>		
 	
-	<p id="back_to_school" style="font-size:30px;color:black">BACK TO SCHOOL</p>
+	<p id="back_to_school" style="font-size:25px;color:black">BACK TO SCHOOL</p>
 	<p style="font-size:15px;color:black"><a href="#top">BACK TOP</a></p>
-	<div class="clearfix" style="width:70%;padding:20px">
-		<img class="itemImg" src="photos/breakfast_tray.png" style="width:200px;height:200px;margin-right:10px">
-		<div class="txt_align" style="width:100%;height:50px">
+	<div class="clearfix" style="padding:20px">
+		<img class="itemImg" src="photos/breakfast_tray.png" style="width:15vw;height:auto">
+		<div class="txt_align">
 			<p><b>OPTION#1 ($125)</b></p>												
 			<li>White box decorated as an animal (personalized name on box)</li>
 			<li>2 sock puppets</li>
@@ -487,18 +515,17 @@ img{
 		</div>
 	</div>		
 	
-	<p id="add" style="font-size:30px;color:black">ADDITIONAL</p>
+	<p id="add" style="font-size:25px;color:black">ADDITIONAL</p>
 	<p style="font-size:15px;color:black"><a href="#top">BACK TOP</a></p>
-	<div class="clearfix" style="width:70%;padding:20px">
-		<img class="itemImg" src="photos/add.png" style="width:200px;height:200px;margin-right:10px">
-		<div class="txt_align" style="width:100%;height:50px">
+	<div class="clearfix" style="padding:20px">
+		<img class="itemImg" src="photos/add.png" style="width:15vw;height:auto">
+		<div class="txt_align">
 			<p><b>+$25</b></p>												
 			<li>CREAM CHEESE SWIRLED COCONUT TRES LECHES CAKE</li>
 			<li>LEMON POPPY SEED AND BLUEBERRY CAKE</li>
 			<li>OTHER CAKES ALSO AVAILABLE UPON REQUEST</li>
 		</div>
 	</div>		
-  </div>
   </div>
   <div class="column right">
   </div>
@@ -511,22 +538,12 @@ img{
 
 
 <div class="footer">
-	<div class="container">
-		<div>
-			<img src="photos/footer.png" style="width:50%;height:100%">
-		</div>
-		<div class="textCenter">
-			<div>
-					<ul style="list-style-type:none">
-						<li style="font-size:15px;font-size:2vw;"><b>Contact Us</b></li>
-						<li style="font-size:15px;font-size:1vw;">Mobile: (416) 274-6759</li>
-						<li style="font-size:15px;font-size:1vw;">Mobile: (647) 573-1821</li>
-						<li style="font-size:15px;font-size:1vw;">Email: suzzgifts@gmail.com</li>
-						<li style="font-size:15px;font-size:1vw;">Instagram @suzz_gifts</li>
-					</ul>
-			</div>
-		</div>
-	</div>
+	<ul style="list-style-type:none">
+		<li style="font-size:1.5vw"><b>Contact Us</b></li>
+		<li style="font-size:1vw">
+			Mobile: (416) 274-6759 | Mobile: (647) 573-1821 | Email: suzzgifts@gmail.com | Instagram @suzz_gifts
+		</li>
+	</ul>
 </div>
 
 </body>
