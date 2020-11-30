@@ -5,6 +5,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
+
+body{
+	background-image:url('photos/background.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position:top center
+}
 * {
   box-sizing: border-box;
 }
@@ -13,16 +20,9 @@ html, body{
 	height:100%;
 }
 
-.bg-image{
-	background-image:url('photos/breakfast.jpg');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	filter:blur(8px);
-}
-
 div {
-	border:0px solid #4CAF50;
-	padding:0px;
+	border:0px solid;
+	padding:1px;
 }
 #transp{
 	opacity:1.0;
@@ -33,22 +33,22 @@ div {
 
 .itemImg{
 	float:left;
+	opacity:1;
 }
 .clearfix{
 	overflow:auto;
 	margin-left:auto;
 	margin-right:auto;  
-
+	color:white;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif, Brush Script MT;
 }
 
 div.polaroid {
 	width:100%;
 	height:100%;
-	background-color: white;
 	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 	margin-bottom: 0px;
 	margin-top :0px;
@@ -61,11 +61,6 @@ div.txt_align{
 	font-size:1vw;
 }
 
-div.background{
-	z-index:-1;
-	filter:blue(35px);
-	background-color:white;
-}
 
 /* Style the header */
 .header {
@@ -80,48 +75,23 @@ div.background{
 
 /* Create three unequal columns that floats next to each other */
 .column {
-	position:relative;
-	padding:10px;
-	display:inline-block;
+	float:left;
 	text-align:center;
 
 }
 .left {
-	width:0%;
-	z-index:-1;
-	display: none;
+	width:16%;
 }
 .middle{
-	padding:50px;
+	width:68%;
 }
 .right{
-	width:0%;
-	z-index:-1;
-	display: none;
+	width:16%;
 }
 .row:after{
 	content:"";
 	display:table;
 	clear:both;
-}
-
-.rectangle{
-	top:25px;
-	margin-left:auto;
-	margin-right:auto;
-	height: 300px;
-	width:850px;
-	background-color:#000000;
-	border:3px solid white;
-}
-
-.circle{
-	height:50px;
-	width:50px;
-	background-color:#9752f9;
-	border:40px;
-	border-radius:50%;
-	display:inline-block;
 }
 
 
@@ -144,27 +114,19 @@ img{
 	flex:1;
 }
 
-.itemLogo{
-	width:50%;
-	height:50%;
-	width:15vw;
-	height:auto
-	opacity:1.0;
-	transition:.5s ease;
-}
 
-.imageAlign{
-	vertical-align:middle;
-}
 
 /* Style the footer */
 .footer {
 	position: fixed;
 	bottom:0;
-	background-color: #FFFFFF;
+	left:0;
+	width:100%;
+	background-color: black;
 	padding: 0px;
-	width: 100%;
 	text-align: center;
+	color:white;
+	opacity:0.7;
 }
 
 
@@ -186,9 +148,7 @@ img{
 	opacity: 1;
 }
 
-.container:hover .itemLogo{
-	opacity:0.2
-}
+
 
 .textCenter{
 	position:absolute;
@@ -197,102 +157,171 @@ img{
 	transform: translate(-50%,-50%);
 }
 
+#content a {
+  display: inline-block;
+}
+
+.paddle {
+	position: relative;
+	top:0;
+	bottom:0;
+	width: 4vw;
+	height:6vw;
+}
+.left-paddle {
+	left: 0;
+}
+.right-paddle {
+	right: 0;
+}
+
+#containerMenu {
+	overflow: hidden;
+	position: relative;
+	width: 50vw;
+	
+}
+#content {
+	white-space: nowrap;
+}
+
+div.gallery{
+	display: inline-block;
+	margin:2vw;
+	border: 1px solid #ccc;
+}
+
+div.gallery:hover{
+	border:1px solid #777;
+}
+
+div.gallery img{
+	height:auto;
+	filter: blur(0);
+}
+
+div.gallery img:hover{
+	filter: blur(2px);
+}
+
+div.desc{
+	padding:0.5vw;
+	text-align:center;
+	background-color:black;
+	opacity:0.7;
+	color:white;
+}
+
+a:link{
+	color:white;
+}
+
+a:visited{
+	color:white;
+}
+a:hover{
+	color:white;
+}
+a:active{
+	color:white;
+	
+}
+
+.labelName{
+	background-color:rgba(0,0,0,0.6);
+	color:white;
+}
+
+.textLabelBig{
+	font-size:1.5vw;	
+}
+.textLabelSmall{
+	font-size:0.5vw;	
+}
+
 </style>
 </head>
-<body style="background-color:white">
+<body>
 
 
-<div class="header">
-		<b style="font-size:4vw">Suzz's Gift</b>
+<header class="header">
+	<div style="background-color:rgba(0,0,0,0.6)">
+		<b style="font-size:4vw;color:white">Suzz's Gift</b>
 		<br>
-		<b style="font-size:1vw">Personalized gifts for your loved ones</b>
-</div>
+		<b style="font-size:1vw;color:white">Personalized gifts for your loved ones</b>
+	</div>
+</header>
 
 
 <div class="row">  
-	<div>
-		<div class="polaroid">
-			<img src="photos/christmas_logo.png" style="width:100%;height:100%;margin-top:0px">
-		</div>
+	<div class="column left">
 	</div>
 	
-  <div class="column middle" style="background-color:white">
-	<p id="top" style="font-size:2vw;color:black"><b>WHAT WE MAKE</b></p>
-	<div>
-		<div class="container" style="display:inline-block">
-			<div>
-				<a href="#gift_box">
-					<img class="itemLogo" src="photos/gift_box.png" style="width:15vw;height:auto">
-				</a>
-			</div>
-			<a href="#gift_box">
-				<div class="centered"><p style="font-size:2vw;color:black"><b>Gift Box</b></p></div>
-			</a>
-		</div>
-		<div class="container" style="display:inline-block">
-			<div>
-				<a href="#gift_cake">
-					<img class="itemLogo" src="photos/gift_cake.png" style="width:15vw;height:auto">
-				</a>
-			</div>
-			<a href="#gift_cake">
-				<div class="centered"><p style="font-size:2vw;color:black"><b>Gift Cake</b></p></div>
-			</a>
-		</div>
-		<div class="container" style="display:inline-block">
-			<div>
-				<a href="#gift_bucket">
-					<img class="itemLogo" src="photos/gift_bucket.png" style="width:15vw;height:auto">
-				</a>
-			</div>
-			<a href="#gift_bucket">
-				<div class="centered"><p style="font-size:2vw;color:black"><b>Gift Bucket</b></p></div>
-			</a>
-		</div>
-		<div class="container" style="display:inline-block">
-			<div>
-				<a href="#am_pm_board">
-					<img class="itemLogo" src="photos/am_pm_board.png" style="width:15vw;height:auto">
-				</a>
-			</div>
-			<a href="#am_pm_board">
-				<div class="centered"><p style="font-size:2vw;color:black"><b>AM PM Board</b></p></div>
-			</a>
-		</div>
-		<div class="container" style="display:inline-block">
-			<div>
-				<a href="#breakfast_tray">
-					<img class="itemLogo" src="photos/breakfast_tray.png" style="width:15vw;height:auto">
-				</a>
-			</div>
-			<a href="#breakfast_tray">
-				<div class="centered"><p style="font-size:2vw;color:black"><b>Breakfast Tray</b></p></div>
-			</a>
-		</div>
-		<div class="container" style="display:inline-block">
-			<div>
-				<a href="#back_to_school">
-					<img class="itemLogo" src="photos/back_to_school.png" style="width:15vw;height:auto">
-				</a>
-			</div>
-			<a href="#back_to_school">
-				<div class="centered"><p style="font-size:2vw;color:black"><b>Back to School</b></p></div>
-			</a>
-		</div>
-		<div class="container" style="display:inline-block">
-			<div>
-				<a href="#add">
-					<img class="itemLogo" src="photos/add.png" style="width:15vw;height:auto">
-				</a>
-			</div>
-			<a href="#add">
-				<div class="centered"><p style="font-size:2vw;color:black"><b>Additional</b></p></div>
-			</a>
-		</div>
-	</div>
+  <div class="column middle">
 
-	<p id="gift_box" style="font-size:2vw;color:black">GIFT BOX</p>
-	<p style="font-size:1vw;color:black"><a href="#top">BACK TOP</a></p>
+	<div style="display:inline-block;background-color:rgba(0,0,0,0.4)">
+	<img src="photos/christmas_logo.png" style="width:100%;height:auto;margin-top:0px">
+	<div class="labelName">
+		<p id="top" class="textLabelBig"><b>WHAT WE MAKE</b></p>
+	</div>
+	<table style="border:0px solid black; margin-left:auto;margin-right:auto">
+		<tr>
+			<th>
+				<div>
+					<button id="slideBack" class="left-paddle paddle">
+					<
+					</button>
+				</div>
+			</th>
+			<th>
+				<div id="containerMenu">
+					<div id="content">
+						<div class = "gallery">
+						<a href="#gift_box"><img src="photos/gift_box.png" style="width:12vw;height:auto"></a>
+						<div class = "desc"><p style="font-size:0.8vw">Gift Box<p></div>
+						</div>
+						<div class = "gallery">
+						<a href="#gift_cake"><img src="photos/gift_cake.png" style="width:12vw;height:auto"></a>
+						<div class = "desc"><p style="font-size:0.8vw">Gift Cake<p></div>
+						</div>
+						<div class = "gallery">
+						<a href="#gift_bucket"><img src="photos/gift_bucket.png" style="width:12vw;height:auto"></a>
+						<div class = "desc"><p style="font-size:0.8vw">Gift Bucket<p></div>
+						</div>
+						<div class = "gallery">
+						<a href="#am_pm_board"><img src="photos/am_pm_board.png" style="width:12vw;height:auto"></a>
+						<div class = "desc"><p style="font-size:0.8vw">AM-PM Board<p></div>
+						</div>
+						<div class = "gallery">
+						<a href="#breakfast_tray"><img src="photos/breakfast_tray.png" style="width:12vw;height:auto"></a>
+						<div class = "desc"><p style="font-size:0.8vw">Breakfast Tray<p></div>
+						</div>
+						<div class = "gallery">
+						<a href="#back_to_school"><img src="photos/back_to_school.png" style="width:12vw;height:auto"></a>
+						<div class = "desc"><p style="font-size:0.8vw">Back To School<p></div>
+						</div>
+						<div class = "gallery">
+						<a href="#add"><img src="photos/add.png" style="width:12vw;height:auto"></a> 
+						<div class = "desc"><p style="font-size:0.8vw">Additional<p></div>
+						</div>					
+					</div>
+				</div>
+			</th>
+			<th>
+				<div>
+					<button id="slide" class="right-paddle paddle">
+						>
+					</button>
+				</div>
+			</th>
+		</tr>
+	</table>
+	<div>
+	
+	<div class="labelName">
+	<p id="gift_box" class="textLabelBig" ><b>GIFT BOX</b></p>
+	<a href="#top" class="textLabelSmall" >BACK TOP</a>
+	</div>
 	<div class="clearfix" style="padding:20px">
 		<img class="itemImg" src="photos/box1.png" style="width:15vw;height:auto;margin-right:1vw">
 		<div class="txt_align">
@@ -381,8 +410,10 @@ img{
 		</div>
 	</div>
 
-	<p id="gift_cake" style="font-size:2vw;color:black">GIFT CAKE</p>
-	<p style="font-size:1vw;color:black"><a href="#top">BACK TOP</a></p>
+	<div class="labelName">
+	<p id="gift_cake" class="textLabelBig"><b>GIFT CAKE</b></p>
+	<a href="#top" class="textLabelSmall">BACK TOP</a>
+	</div>
 	<div class="clearfix" style="padding:20px">
 		<img class="itemImg" src="photos/cake1.png" style="width:15vw;height:auto;margin-right:1vw">
 		<div class="txt_align">
@@ -412,8 +443,10 @@ img{
 		</div>
 	</div>	
 	
-	<p id="gift_bucket" style="font-size:2vw;color:black">GIFT BUCKET</p>
-	<p style="font-size:1vw;color:black"><a href="#top">BACK TOP</a></p>
+	<div class="labelName">
+	<p id="gift_bucket" class="textLabelBig"><b>GIFT BUCKET</b></p>
+	<a href="#top" class="textLabelSmall">BACK TOP</a>
+	</div>
 	<div class="clearfix" style="padding:20px">
 		<img class="itemImg" src="photos/gift_bucket.png" style="width:15vw;height:auto;margin-right:1vw">
 		<div class="txt_align">
@@ -444,8 +477,10 @@ img{
 		</div>
 	</div>		
 
-	<p id="am_pm_board" style="font-size:2vw;color:black">AM PM BOARD</p>
-	<p style="font-size:1vw;color:black"><a href="#top">BACK TOP</a></p>
+	<div class="labelName">
+	<p id="am_pm_board" class="textLabelBig"><b>AM PM BOARD</b></p>
+	<a href="#top" class="textLabelSmall">BACK TOP</a>
+	</div>
 	<div class="clearfix" style="padding:20px">
 		<img class="itemImg" src="photos/am_pm_board.png" style="width:15vw;height:auto;margin-right:1vw">
 		<div class="txt_align">
@@ -458,8 +493,10 @@ img{
 		</div>
 	</div>		
 	
-	<p id="breakfast_tray" style="font-size:2vw;color:black">BREAKFAST TRAY</p>
-	<p style="font-size:1vw;color:black"><a href="#top">BACK TOP</a></p>
+	<div class="labelName">
+	<p id="breakfast_tray" class="textLabelBig"><b>BREAKFAST TRAY</b></p>
+	<a href="#top" class="textLabelSmall">BACK TOP</a>
+	</div>
 	<div class="clearfix" style="padding:20px">
 		<img class="itemImg" src="photos/breakfast_tray.png" style="width:15vw;height:auto;margin-right:1vw">
 		<div class="txt_align">
@@ -477,9 +514,11 @@ img{
 		</div>
 	</div>		
 	
-	<p id="back_to_school" style="font-size:2vw;color:black">BACK TO SCHOOL</p>
-	<p style="font-size:1vw;color:black"><a href="#top">BACK TOP</a></p>
-	<div class="clearfix" style="padding:10px">
+	<div class="labelName">
+	<p id="back_to_school" class="textLabelBig"><b>BACK TO SCHOOL</b></p>
+	<a href="#top" class="textLabelSmall">BACK TOP</a>
+	</div>
+	<div class="clearfix" style="padding:20px">
 		<img class="itemImg" src="photos/breakfast_tray.png" style="width:15vw;height:auto;margin-right:1vw">
 		<div class="txt_align">
 			<p><b>OPTION#1 ($125)</b></p>												
@@ -495,8 +534,10 @@ img{
 		</div>
 	</div>		
 	
-	<p id="add" style="font-size:2vw;color:black">ADDITIONAL</p>
-	<p style="font-size:1vw;color:black"><a href="#top">BACK TOP</a></p>
+	<div class="labelName">
+	<p id="add" class="textLabelBig"><b>ADDITIONAL</b></p>
+	<a href="#top" class="textLabelSmall">BACK TOP</a>
+	</div>
 	<div class="clearfix" style="padding:20px">
 		<img class="itemImg" src="photos/add.png" style="width:15vw;height:auto;margin-right:1vw">
 		<div class="txt_align">
@@ -505,18 +546,49 @@ img{
 			<li>LEMON POPPY SEED AND BLUEBERRY CAKE</li>
 			<li>OTHER CAKES ALSO AVAILABLE UPON REQUEST</li>
 		</div>
-	</div>		
+	</div>	
+	
   </div>
   <div class="column right">
   </div>
 </div>
 
 
-<div class="footer">
-	<b style="font-size:3vw">Contact Us</b>
+<footer class="footer">
+	<b style="font-size:2.1vw">Contact Us</b>
 	<br>
-	<b style="font-size:1.5vw">Mobile: (416) 274-6759 | Mobile: (647) 573-1821 | Email: suzzgifts@gmail.com | Instagram @suzz_gifts</b>
-</div>
+	<b style="font-size:1.1vw">Mobile: (416) 274-6759 | Mobile: (647) 573-1821 | Email: suzzgifts@gmail.com | Instagram @suzz_gifts</b>
+</footer>
+
+<script>
+ var button = document.getElementById('slide');
+button.onclick = function () {
+    var containerMenu = document.getElementById('containerMenu');
+    sideScroll(containerMenu,'right',25,100,10);
+};
+
+var back = document.getElementById('slideBack');
+back.onclick = function () {
+    var containerMenu = document.getElementById('containerMenu');
+    sideScroll(containerMenu,'left',25,100,10);
+};
+
+function sideScroll(element,direction,speed,distance,step){
+    scrollAmount = 0;
+    var slideTimer = setInterval(function(){
+        if(direction == 'left'){
+            element.scrollLeft -= step;
+        } else {
+            element.scrollLeft += step;
+        }
+        scrollAmount += step;
+        if(scrollAmount >= distance){
+            window.clearInterval(slideTimer);
+        }
+    }, speed);
+}
+</script>
+
 
 </body>
 </html>
