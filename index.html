@@ -21,44 +21,37 @@ html, body{
 }
 
 div {
-	border:0px solid;
+	border:0px solid black;
 	padding:1px;
 }
-#transp{
-	opacity:1.0;
-}
-#transp:hover{
-	opacity:0.5;
-}
+
 
 .itemImg{
 	float:left;
 	opacity:1;
+	border-radius: 10px;
 }
 .clearfix{
 	overflow:auto;
 	margin-left:auto;
 	margin-right:auto;  
+	width:85%;
 	color:black;
+	padding:5px;
+	
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif, Brush Script MT;
 }
 
-div.polaroid {
-	width:100%;
-	height:100%;
-	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
-	margin-bottom: 0px;
-	margin-top :0px;
-	margin-left:auto;
-	margin-right:auto;  
-  
-}
 div.txt_align{
 	text-align:left;
-	font-size:1vw;
+	font-size:0.8vw;
+	font-weight:bold;
+	width:auto;
+	display:inline-block;
+	float:left;
 }
 
 
@@ -70,6 +63,7 @@ div.txt_align{
   text-align: center;
   font-size: 0px;
   margin-bottom:20px;
+  background-image:url('photos/background.jpg');
 }
 
 
@@ -77,6 +71,7 @@ div.txt_align{
 .column {
 	float:left;
 	text-align:center;
+	margin-bottom:100px;
 
 }
 .left {
@@ -94,87 +89,59 @@ div.txt_align{
 	clear:both;
 }
 
-
-img{
-	display:block;
-	border:0px solid #FFFFFF;
-	border-radius:0px;
-	padding:0px;
-	top:0px;
-	margin-left:auto;
-	margin-right:auto;  	
-
-
-}
-#images{
-	text-align:center;
-	padding:20px;
-}
-#images div {
-	flex:1;
-}
-
-
-
 /* Style the footer */
 .footer {
 	position: fixed;
 	bottom:0;
 	left:0;
-	width:100%;
+	right:0;
+	width:auto;
 	padding: 0px;
 	text-align: center;
 	color:black;
 	background-image:url('photos/background.jpg');
 	background-repeat: no-repeat;
-	background-position:top right;
-}
-
-
-.container{
-	position:relative;
-	text-align:center;
-}
-
-.centered{
-	position:absolute;
-	top:50%;
-	left:50%;
-	transform: translate(-50%,-50%);
-	transition: .5s ease;
-	opacity:0;
-}
-
-.container:hover .centered{
-	opacity: 1;
-}
-
-
-
-.textCenter{
-	position:absolute;
-	top:50%;
-	left:50%;
-	transform: translate(-50%,-50%);
-}
-
-#content a {
-  display: inline-block;
+	background-position:center;
+	margin-left:auto;
+	margin-right:auto;
+	
 }
 
 .paddle {
+	cursor:pointer;
 	position: relative;
 	top:0;
+	font-weight:bold;
+	font-size:3vw;
+	transition:0.6s ease;
 	bottom:0;
 	width: 4vw;
-	height:6vw;
+	height:5vw;
+	padding: 0px;
+	background: black;
+	opacity:0.5;
+	outline:none;
+	color:white;
+	border-radius:15px 15px 15px 15px;
 }
 .left-paddle {
 	left: 0;
+	border:0;
+	
 }
 .right-paddle {
 	right: 0;
+	border:0;
 }
+.paddle:hover{
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.paddle:active{
+	background-color:none;
+	background-color: rgba(255, 255, 255, 0.8);
+	border:0;
+}
+
 
 #containerMenu {
 	overflow: hidden;
@@ -189,27 +156,33 @@ img{
 div.gallery{
 	display: inline-block;
 	margin:2vw;
-	border: 1px solid #ccc;
+	border-radius: 10px 10px 10px 10px;
 }
 
 div.gallery:hover{
-	border:1px solid #777;
+
 }
 
 div.gallery img{
 	height:auto;
 	filter: blur(0);
+	border-radius: 10px 10px 0 0;
 }
 
 div.gallery img:hover{
-	filter: blur(2px);
+
 }
 
 div.desc{
-	padding:0.5vw;
+	display:block;
 	text-align:center;
-	background-color:rgba(0,0,0,0.3);
+	background-color:rgba(255,255,255,0.3);
 	color:black;
+	border-radius: 0 0 10px 10px;
+}
+
+div.desc:hover{
+
 }
 
 a:link{
@@ -228,15 +201,154 @@ a:active{
 }
 
 .labelName{
-	background-color:rgba(0,0,0,0.3);
+	display:block;
+	background-color:rgba(255,255,255,0.3);
 	color:black;
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 .textLabelBig{
 	font-size:1.5vw;	
 }
 .textLabelSmall{
-	font-size:0.5vw;	
+	font-size:0.9vw;	
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 40%;
+  max-width: 500px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.prev{
+	left:-50px;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: -50px;;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.galleryRow > .galleryColumn{
+	padding: 0 8px;
+}
+
+.galleryrow:after{
+  content: "";
+  display: table;
+  clear: both;	
+}
+
+.galleryColumn{
+  float: left;
+  width: 25%;	
 }
 
 </style>
@@ -260,7 +372,7 @@ a:active{
   <div class="column middle">
 
 	<div style="display:inline-block;background-color:rgba(0,0,0,0.1)">
-	<img src="photos/christmas_logo.png" style="width:100%;height:auto;margin-top:0px">
+	<img src="photos/christmas_logo.jpg" style="width:100%;height:auto;margin-top:0px">
 	<div class="labelName">
 		<p id="top" class="textLabelBig"><b>WHAT WE MAKE</b></p>
 	</div>
@@ -268,39 +380,39 @@ a:active{
 		<tr>
 			<th>
 				<div>
-					<button id="slideBack" class="left-paddle paddle">
-					<
-					</button>
+					<p id="rightDemo"><button id="slideBack" class="left-paddle paddle">
+					&#10094;
+					</button></p>
 				</div>
 			</th>
 			<th>
 				<div id="containerMenu">
 					<div id="content">
-						<div class = "gallery">
+						<div class = "gallery hover-shadow cursor">
 						<a href="#gift_box"><img src="photos/gift_box.png" style="width:12vw;height:auto"></a>
 						<div class = "desc"><p style="font-size:0.8vw">Gift Box<p></div>
 						</div>
-						<div class = "gallery">
+						<div class = "gallery hover-shadow cursor">
 						<a href="#gift_cake"><img src="photos/gift_cake.png" style="width:12vw;height:auto"></a>
 						<div class = "desc"><p style="font-size:0.8vw">Gift Cake<p></div>
 						</div>
-						<div class = "gallery">
+						<div class = "gallery hover-shadow cursor">
 						<a href="#gift_bucket"><img src="photos/gift_bucket.png" style="width:12vw;height:auto"></a>
 						<div class = "desc"><p style="font-size:0.8vw">Gift Bucket<p></div>
 						</div>
-						<div class = "gallery">
+						<div class = "gallery hover-shadow cursor">
 						<a href="#am_pm_board"><img src="photos/am_pm_board.png" style="width:12vw;height:auto"></a>
 						<div class = "desc"><p style="font-size:0.8vw">AM-PM Board<p></div>
 						</div>
-						<div class = "gallery">
+						<div class = "gallery hover-shadow cursor">
 						<a href="#breakfast_tray"><img src="photos/breakfast_tray.png" style="width:12vw;height:auto"></a>
 						<div class = "desc"><p style="font-size:0.8vw">Breakfast Tray<p></div>
 						</div>
-						<div class = "gallery">
+						<div class = "gallery hover-shadow cursor">
 						<a href="#back_to_school"><img src="photos/back_to_school.png" style="width:12vw;height:auto"></a>
 						<div class = "desc"><p style="font-size:0.8vw">Back To School<p></div>
 						</div>
-						<div class = "gallery">
+						<div class = "gallery hover-shadow cursor">
 						<a href="#add"><img src="photos/add.png" style="width:12vw;height:auto"></a> 
 						<div class = "desc"><p style="font-size:0.8vw">Additional<p></div>
 						</div>					
@@ -309,9 +421,9 @@ a:active{
 			</th>
 			<th>
 				<div>
-					<button id="slide" class="right-paddle paddle">
-						>
-					</button>
+					<p id="leftDemo"><button id="slide" onmousedown="rightFunction()" class="right-paddle paddle">
+						&#10095;
+					</button></p>
 				</div>
 			</th>
 		</tr>
@@ -322,8 +434,8 @@ a:active{
 	<p id="gift_box" class="textLabelBig" ><b>GIFT BOX</b></p>
 	<a href="#top" class="textLabelSmall" >BACK TOP</a>
 	</div>
-	<div class="clearfix" style="padding:20px">
-		<img class="itemImg" src="photos/box1.png" style="width:15vw;height:auto;margin-right:1vw">
+	<div class="clearfix">
+		<img class="itemImg hover-shadow cursor" src="photos/box1.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBoxOp1();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION #1 ($100)</b></p>
 			<li>White box</li>
@@ -335,8 +447,8 @@ a:active{
 		</div>
 	</div>
 	
-	<div class="clearfix" style="padding:20px">
-		<img class="itemImg" src="photos/box2.png" style="width:15vw;height:auto;margin-right:1vw">
+	<div class="clearfix">
+		<img class="itemImg hover-shadow cursor" src="photos/box2.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBoxOp2();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION #2 ($120)</b></p>
 			<li>White box																			</li>
@@ -351,8 +463,8 @@ a:active{
 		</div>
 	</div>
 
-	<div class="clearfix" style="padding:20px">
-		<img class="itemImg" src="photos/box3.png" style="width:15vw;height:auto;margin-right:1vw">
+	<div class="clearfix">
+		<img class="itemImg hover-shadow cursor" src="photos/box3.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBoxOp3();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION #3 ($175)</b></p>
 			<li>Heart shaped box (color customizable)</li>	
@@ -365,8 +477,8 @@ a:active{
 		</div>
 	</div>
 
-	<div class="clearfix" style="padding:20px">
-		<img class="itemImg" src="photos/box4.png" style="width:15vw;height:auto;margin-right:1vw">
+	<div class="clearfix">
+		<img class="itemImg hover-shadow cursor" src="photos/box4.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBoxOp4();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION #4 ($75)</b></p>			
 			<li>White box
@@ -379,8 +491,8 @@ a:active{
 		</div>
 	</div>
 
-	<div class="clearfix" style="padding:20px">
-		<img class="itemImg" src="photos/box5.png" style="width:15vw;height:auto;margin-right:1vw">
+	<div class="clearfix">
+		<img class="itemImg hover-shadow cursor" src="photos/box5.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBoxOp5();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION #5 ($75)</b></p>
 			<li>White box</li>		
@@ -392,8 +504,8 @@ a:active{
 		</div>
 	</div>
 
-	<div class="clearfix" style="padding:20px">
-		<img class="itemImg" src="photos/box6.png" style="width:15vw;height:auto;margin-right:1vw">
+	<div class="clearfix">
+		<img class="itemImg hover-shadow cursor" src="photos/box6.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBoxOp6();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION #6 ($125)</b></p>	
 			<li>White box</li>		
@@ -414,8 +526,8 @@ a:active{
 	<p id="gift_cake" class="textLabelBig"><b>GIFT CAKE</b></p>
 	<a href="#top" class="textLabelSmall">BACK TOP</a>
 	</div>
-	<div class="clearfix" style="padding:20px">
-		<img class="itemImg" src="photos/cake1.png" style="width:15vw;height:auto;margin-right:1vw">
+	<div class="clearfix">
+		<img class="itemImg hover-shadow cursor" src="photos/cake1.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openCakeOp1();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>BEER CAKE ($150)</b></p>			
 			<li>24 Beers</li>
@@ -428,8 +540,8 @@ a:active{
 		</div>
 	</div>
 
-	<div class="clearfix" style="padding:20px">
-		<img class="itemImg" src="photos/cake2.png" style="width:15vw;height:auto;margin-right:1vw">
+	<div class="clearfix">
+		<img class="itemImg hover-shadow cursor" src="photos/cake2.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openCakeOp2();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>DIAPER CAKE ($175)</b></p>
 			<li>3 tier cake structure</li>
@@ -447,8 +559,8 @@ a:active{
 	<p id="gift_bucket" class="textLabelBig"><b>GIFT BUCKET</b></p>
 	<a href="#top" class="textLabelSmall">BACK TOP</a>
 	</div>
-	<div class="clearfix" style="padding:20px">
-		<img class="itemImg" src="photos/gift_bucket.png" style="width:15vw;height:auto;margin-right:1vw">
+	<div class="clearfix">
+		<img class="itemImg hover-shadow cursor" src="photos/gift_bucket.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBuckOp1();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION#1 ($110)</b></p>
 			<li>Ice bucket</li>
@@ -461,8 +573,8 @@ a:active{
 		</div>
 	</div>	
 
-	<div class="clearfix" style="padding:20px">
-		<img class="itemImg" src="photos/gift_bucket.png" style="width:15vw;height:auto;margin-right:1vw">
+	<div class="clearfix">
+		<img class="itemImg hover-shadow cursor" src="photos/gift_bucket.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBuckOp2();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION#2 ($200)</b></p>			
 			<li>Ice bucket</li>
@@ -481,8 +593,8 @@ a:active{
 	<p id="am_pm_board" class="textLabelBig"><b>AM PM BOARD</b></p>
 	<a href="#top" class="textLabelSmall">BACK TOP</a>
 	</div>
-	<div class="clearfix" style="padding:20px">
-		<img class="itemImg" src="photos/am_pm_board.png" style="width:15vw;height:auto;margin-right:1vw">
+	<div class="clearfix">
+		<img class="itemImg hover-shadow cursor" src="photos/am_pm_board.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openAmPmOp1();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION#1 ($125)</b></p>						
 			<li>Wooden board</li>
@@ -497,8 +609,8 @@ a:active{
 	<p id="breakfast_tray" class="textLabelBig"><b>BREAKFAST TRAY</b></p>
 	<a href="#top" class="textLabelSmall">BACK TOP</a>
 	</div>
-	<div class="clearfix" style="padding:20px">
-		<img class="itemImg" src="photos/breakfast_tray.png" style="width:15vw;height:auto;margin-right:1vw">
+	<div class="clearfix">
+		<img class="itemImg hover-shadow cursor" src="photos/breakfast_tray.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBreakfastOp1();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION#1 ($150)</b></p>									
 			<li>Breakfast tray</li>
@@ -518,8 +630,8 @@ a:active{
 	<p id="back_to_school" class="textLabelBig"><b>BACK TO SCHOOL</b></p>
 	<a href="#top" class="textLabelSmall">BACK TOP</a>
 	</div>
-	<div class="clearfix" style="padding:20px">
-		<img class="itemImg" src="photos/breakfast_tray.png" style="width:15vw;height:auto;margin-right:1vw">
+	<div class="clearfix">
+		<img class="itemImg hover-shadow cursor" src="photos/back_to_school.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openSchoolOp1();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION#1 ($125)</b></p>												
 			<li>White box decorated as an animal (personalized name on box)</li>
@@ -538,8 +650,8 @@ a:active{
 	<p id="add" class="textLabelBig"><b>ADDITIONAL</b></p>
 	<a href="#top" class="textLabelSmall">BACK TOP</a>
 	</div>
-	<div class="clearfix" style="padding:20px">
-		<img class="itemImg" src="photos/add.png" style="width:15vw;height:auto;margin-right:1vw">
+	<div class="clearfix">
+		<img class="itemImg hover-shadow cursor" src="photos/add.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openAddOp1();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>+$25</b></p>												
 			<li>CREAM CHEESE SWIRLED COCONUT TRES LECHES CAKE</li>
@@ -553,6 +665,46 @@ a:active{
   </div>
 </div>
 
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 3</div>
+      <img id="image1" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 3</div>
+      <img id="image2" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 3</div>
+      <img id="image3" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption">Caption here</p>
+    </div>
+	
+    <div class="galleryColumn">
+      <img id="image4" class="demo cursor" style="width:100%" onclick="currentSlide(1)">
+    </div>
+    <div class="galleryColumn">
+      <img id="image5" class="demo cursor" style="width:100%" onclick="currentSlide(2)">
+    </div>
+    <div class="galleryColumn">
+      <img id="image6" class="demo cursor" style="width:100%" onclick="currentSlide(3)">
+    </div>	
+
+  </div>
+</div>
+
+
 
 <footer class="footer">
 	<b style="font-size:2.1vw">Contact Us</b>
@@ -561,14 +713,16 @@ a:active{
 </footer>
 
 <script>
- var button = document.getElementById('slide');
-button.onclick = function () {
+ document.getElementById('leftDemo').addEventListener("mousedown", mouseDown);
+//button.onmousedown = function () {
+function mouseDown(){
     var containerMenu = document.getElementById('containerMenu');
     sideScroll(containerMenu,'right',25,100,10);
 };
 
-var back = document.getElementById('slideBack');
-back.onclick = function () {
+document.getElementById('rightDemo').addEventListener("mouseup",mouseUp);
+//back.onmousedown = function () {
+function mouseUp(){
     var containerMenu = document.getElementById('containerMenu');
     sideScroll(containerMenu,'left',25,100,10);
 };
@@ -587,6 +741,185 @@ function sideScroll(element,direction,speed,distance,step){
         }
     }, speed);
 }
+
+//individual item image gallery start
+function openBoxOp1() {
+	document.getElementById("myModal").style.display = "block";
+	document.getElementById("image1").src="photos/box_op_1_1.jpg";
+	document.getElementById("image2").src="photos/box_op_1_2.jpg";
+	document.getElementById("image3").src="photos/box_op_1_3.jpg";  
+	document.getElementById("image4").src="photos/box_op_1_1.jpg";
+	document.getElementById("image5").src="photos/box_op_1_2.jpg";
+	document.getElementById("image6").src="photos/box_op_1_3.jpg";  	
+}
+
+function openBoxOp2() {
+	document.getElementById("myModal").style.display = "block";
+	document.getElementById("image1").src="photos/box_op_2_1.jpg";
+	document.getElementById("image2").src="photos/box_op_2_2.jpg";
+	document.getElementById("image3").src="photos/box_op_2_3.jpg";  
+	document.getElementById("image4").src="photos/box_op_2_1.jpg";
+	document.getElementById("image5").src="photos/box_op_2_2.jpg";
+	document.getElementById("image6").src="photos/box_op_2_3.jpg";  	
+}
+
+function openBoxOp3() {
+	document.getElementById("myModal").style.display = "block";
+	document.getElementById("image1").src="photos/box_op_3_1.jpg";
+	document.getElementById("image2").src="photos/box_op_3_2.jpg";
+	document.getElementById("image3").src="photos/box_op_3_3.jpg";  
+	document.getElementById("image4").src="photos/box_op_3_1.jpg";
+	document.getElementById("image5").src="photos/box_op_3_2.jpg";
+	document.getElementById("image6").src="photos/box_op_3_3.jpg";  	
+}
+
+function openBoxOp4() {
+	document.getElementById("myModal").style.display = "block";
+	document.getElementById("image1").src="photos/box_op_4_1.jpg";
+	document.getElementById("image2").src="photos/box_op_4_2.jpg";
+	document.getElementById("image3").src="photos/box_op_4_3.jpg";  
+	document.getElementById("image4").src="photos/box_op_4_1.jpg";
+	document.getElementById("image5").src="photos/box_op_4_2.jpg";
+	document.getElementById("image6").src="photos/box_op_4_3.jpg";  	
+}
+
+function openBoxOp5() {
+	document.getElementById("myModal").style.display = "block";
+	document.getElementById("image1").src="photos/box_op_5_1.jpg";
+	document.getElementById("image2").src="photos/box_op_5_2.jpg";
+	document.getElementById("image3").src="photos/box_op_5_3.jpg";  
+	document.getElementById("image4").src="photos/box_op_5_1.jpg";
+	document.getElementById("image5").src="photos/box_op_5_2.jpg";
+	document.getElementById("image6").src="photos/box_op_5_3.jpg";  	
+}
+
+function openBoxOp6() {
+	document.getElementById("myModal").style.display = "block";
+	document.getElementById("image1").src="photos/box_op_6_1.jpg";
+	document.getElementById("image2").src="photos/box_op_6_2.jpg";
+	document.getElementById("image3").src="photos/box_op_6_3.jpg";  
+	document.getElementById("image4").src="photos/box_op_6_1.jpg";
+	document.getElementById("image5").src="photos/box_op_6_2.jpg";
+	document.getElementById("image6").src="photos/box_op_6_3.jpg";  	
+}
+
+function openCakeOp1() {
+	document.getElementById("myModal").style.display = "block";
+	document.getElementById("image1").src="photos/cake_op_1_1.jpg";
+	document.getElementById("image2").src="photos/cake_op_1_2.jpg";
+	document.getElementById("image3").src="photos/cake_op_1_3.jpg";  
+	document.getElementById("image4").src="photos/cake_op_1_1.jpg";
+	document.getElementById("image5").src="photos/cake_op_1_2.jpg";
+	document.getElementById("image6").src="photos/cake_op_1_3.jpg";  	
+}
+
+function openCakeOp2() {
+	document.getElementById("myModal").style.display = "block";
+	document.getElementById("image1").src="photos/cake_op_2_1.jpg";
+	document.getElementById("image2").src="photos/cake_op_2_2.jpg";
+	document.getElementById("image3").src="photos/cake_op_2_3.jpg";  
+	document.getElementById("image4").src="photos/cake_op_2_1.jpg";
+	document.getElementById("image5").src="photos/cake_op_2_2.jpg";
+	document.getElementById("image6").src="photos/cake_op_2_3.jpg";  	
+}
+
+function openBuckOp1() {
+	document.getElementById("myModal").style.display = "block";
+	document.getElementById("image1").src="photos/buck_op_1_1.jpg";
+	document.getElementById("image2").src="photos/buck_op_1_2.jpg";
+	document.getElementById("image3").src="photos/buck_op_1_3.jpg";  
+	document.getElementById("image4").src="photos/buck_op_1_1.jpg";
+	document.getElementById("image5").src="photos/buck_op_1_2.jpg";
+	document.getElementById("image6").src="photos/buck_op_1_3.jpg";  	
+}
+
+function openBuckOp2() {
+	document.getElementById("myModal").style.display = "block";
+	document.getElementById("image1").src="photos/buck_op_2_1.jpg";
+	document.getElementById("image2").src="photos/buck_op_2_2.jpg";
+	document.getElementById("image3").src="photos/buck_op_2_3.jpg";  
+	document.getElementById("image4").src="photos/buck_op_2_1.jpg";
+	document.getElementById("image5").src="photos/buck_op_2_2.jpg";
+	document.getElementById("image6").src="photos/buck_op_2_3.jpg";  	
+}
+
+function openAmPmOp1() {
+	document.getElementById("myModal").style.display = "block";
+	document.getElementById("image1").src="photos/ampm_op_1_1.jpg";
+	document.getElementById("image2").src="photos/ampm_op_1_2.jpg";
+	document.getElementById("image3").src="photos/ampm_op_1_3.jpg";  
+	document.getElementById("image4").src="photos/ampm_op_1_1.jpg";
+	document.getElementById("image5").src="photos/ampm_op_1_2.jpg";
+	document.getElementById("image6").src="photos/ampm_op_1_3.jpg";  	
+}
+
+function openBreakfastOp1() {
+	document.getElementById("myModal").style.display = "block";
+	document.getElementById("image1").src="photos/breakfast_op_1_1.jpg";
+	document.getElementById("image2").src="photos/breakfast_op_1_2.jpg";
+	document.getElementById("image3").src="photos/breakfast_op_1_3.jpg";  
+	document.getElementById("image4").src="photos/breakfast_op_1_1.jpg";
+	document.getElementById("image5").src="photos/breakfast_op_1_2.jpg";
+	document.getElementById("image6").src="photos/breakfast_op_1_3.jpg";  	
+}
+
+function openSchoolOp1() {
+	document.getElementById("myModal").style.display = "block";
+	document.getElementById("image1").src="photos/school_op_1_1.jpg";
+	document.getElementById("image2").src="photos/school_op_1_2.jpg";
+	document.getElementById("image3").src="photos/school_op_1_3.jpg";  
+	document.getElementById("image4").src="photos/school_op_1_1.jpg";
+	document.getElementById("image5").src="photos/school_op_1_2.jpg";
+	document.getElementById("image6").src="photos/school_op_1_3.jpg";  	
+}
+
+function openAddOp1() {
+	document.getElementById("myModal").style.display = "block";
+	document.getElementById("image1").src="photos/add_op_1_1.jpeg";
+	document.getElementById("image2").src="photos/add_op_1_2.jpeg";
+	document.getElementById("image3").src="photos/add_op_1_3.jpeg";  
+	document.getElementById("image4").src="photos/add_op_1_1.jpeg";
+	document.getElementById("image5").src="photos/add_op_1_2.jpeg";
+	document.getElementById("image6").src="photos/add_op_1_3.jpeg";  	
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+
+
 </script>
 
 
