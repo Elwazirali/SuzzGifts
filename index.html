@@ -3,14 +3,15 @@
 <head>
 <title>Suzz's Gifts</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0, user-scalable=0">
 <style type="text/css">
 
 body{
-	background-image:url('photos/background.jpg');
-	background-repeat: no-repeat;
+<!-- 	background-image:url('photos/background.jpg');
+ -->	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-position:center
+	background-position:center;
+	background-color:white;
 }
 * {
   box-sizing: border-box;
@@ -22,7 +23,7 @@ html, body{
 
 div {
 	border:0px solid black;
-	padding:1px;
+	padding:0.1px;
 }
 
 
@@ -35,9 +36,9 @@ div {
 	overflow:auto;
 	margin-left:auto;
 	margin-right:auto;  
-	width:85%;
+	width:100%;
 	color:black;
-	padding:5px;
+	padding:15px;
 	
 }
 
@@ -47,22 +48,26 @@ body {
 
 div.txt_align{
 	text-align:left;
-	font-size:0.8vw;
-	font-weight:bold;
+	font-size:1.3vw;
+	font-weight:normal;
 	width:auto;
 	display:inline-block;
 	float:left;
+	font-style:italic;
 }
 
 
 /* Style the header */
 .header {
   top:0;
-  width: 100%;
-  padding: 0px;
+  margin-left:auto;
+  margin-right:auto;
+  left:0;
+  right:0;
   text-align: center;
   font-size: 0px;
-  margin-bottom:20px;
+  margin-bottom:0;
+  padding:0;
   background-image:url('photos/background.jpg');
 }
 
@@ -71,17 +76,16 @@ div.txt_align{
 .column {
 	float:left;
 	text-align:center;
-	margin-bottom:100px;
 
 }
 .left {
-	width:16%;
 }
 .middle{
-	width:68%;
+	background-image:url('photos/background.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 .right{
-	width:16%;
 }
 .row:after{
 	content:"";
@@ -92,19 +96,17 @@ div.txt_align{
 /* Style the footer */
 .footer {
 	position: fixed;
+	width:100%;
 	bottom:0;
 	left:0;
 	right:0;
-	width:auto;
-	padding: 0px;
+}
+
+.footerClass{
 	text-align: center;
 	color:black;
-	background-image:url('photos/background.jpg');
-	background-repeat: no-repeat;
-	background-position:center;
 	margin-left:auto;
 	margin-right:auto;
-	
 }
 
 .paddle {
@@ -122,16 +124,18 @@ div.txt_align{
 	opacity:0.5;
 	outline:none;
 	color:white;
-	border-radius:15px 15px 15px 15px;
+	border-radius:50% 50%;
 }
 .left-paddle {
 	left: 0;
 	border:0;
+	display:inline-block;
 	
 }
 .right-paddle {
 	right: 0;
 	border:0;
+	display:inline-block;
 }
 .paddle:hover{
 	background-color: rgba(255, 255, 255, 0.5);
@@ -144,10 +148,12 @@ div.txt_align{
 
 
 #containerMenu {
-	overflow: hidden;
+	overflow: scroll;
+	overflow-y:hidden;
+	scrollbar-width:none;
+	-ms-overflow-style:none;
 	position: relative;
-	width: 50vw;
-	
+	width:100%;
 }
 #content {
 	white-space: nowrap;
@@ -202,7 +208,7 @@ a:active{
 
 .labelName{
 	display:block;
-	background-color:rgba(255,255,255,0.3);
+	background-color:rgba(255,255,255,0.6);
 	color:black;
 	width:100%;
 	margin-left:auto;
@@ -210,7 +216,7 @@ a:active{
 }
 
 .textLabelBig{
-	font-size:1.5vw;	
+	font-size:2.0vw;	
 }
 .textLabelSmall{
 	font-size:0.9vw;	
@@ -351,91 +357,244 @@ img.hover-shadow {
   width: 25%;	
 }
 
+
+.updateLogo{
+	border : 0px solid black;
+
+}
+.updateLogoImg{
+	object-fit: cover;
+}
+
+/* Logo slideshow*/
+.logoSlides{
+	display:none
+}
+
+.slideshow-container{
+	width:100%;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	object-fit: cover;
+	overflow: hidden;
+}
+
+.logoPrev, .logoNext{
+	cursor:pointer;
+	position: absolute;
+	top:50%;
+	width:auto;
+	padding:5px;
+	margin-top:-22px;
+	color:white;
+	font-weight:bold;
+	font-size:3vw;
+	transition:0.6s ease;
+	user-select:none;
+}
+
+.logoNext{
+	right:0;
+	border-radius:0 5px 5px 0;
+}
+
+.logoPrev{
+	left:0;
+	border-radius:5px 0 0 5px;	
+}
+
+.logoPrev:hover, .logoNext:hover{
+	background-color:rgba(0,0,0,0.8);
+}
+
+.text{
+	position:absolute;
+	width:30%;
+	text-align:left;
+	font-size:0;
+	right:3%;
+	top:25%;
+}
+
+.numbertext{
+	color:black;
+	font-weight:bold;
+	font-size:1vw;
+	padding:0.5vw 0.5vw;
+	position: absolute;
+	top:0;
+}
+
+.dot{
+	cursor:pointer;
+	height:1.0vw;
+	width:1.0vw;
+	margin:0 2px;
+	background-color:#bbb;
+	border-radius:50%;
+	display: inline-block;
+	transition:background-color 0.6s ease;
+}
+
+.logoactive, .dot:hover{
+	background-color: #717171;
+}
+
+.fade{
+	-webkit-animation-name:fade;
+	-webkit-animation-duration:1.5s;
+	animation-name:fade;
+	animation-duration:1.5s;
+}
+
+@-webkit-keyframes fade{
+	from {opacity:.0}
+	to {opacity:1}
+}
+
+@keyframes fade{
+	from {opacity:.0}
+	to {opacity:1}
+}
+
+@media only screen and (max-width:300px){
+	.prev, .next, .text{font-size:11px}
+
+}
+
+::-webkit-scrollbar{
+	width:12px;
+	height:12px;
+}
+
+::-webkit-scrollbar-track{
+	background:transparent;
+}
+
+::-webkit-scrollbar-thumb{
+	-webkit-border-radius:10px;
+	background:rgba(128,128,128,0.4);
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background:gray;
+}
+
+
 </style>
 </head>
 <body>
 
 
-<header class="header">
+<header id="head" class="header">
 	<div>
-		<b style="font-size:4vw;color:black">Suzz's Gift</b>
+		<b style="font-size:8vh;color:black">Suzz's Gift</b>
 		<br>
-		<b style="font-size:1vw;color:black">Personalized gifts for your loved ones</b>
+		<b style="font-size:2.8vh;color:black">Personalized gifts for your loved ones</b>
+		<hr>
+		<div class="footerClass">
+			<em><b style="font-size:1.1vh">Mobile: (416) 274-6759 | Mobile: (647) 573-1821 | Email: suzzgifts@gmail.com | Instagram @suzz_gifts</b></em>
+		</div>
+		<hr>
 	</div>
 </header>
 
-
 <div class="row">  
-	<div class="column left">
+	<div id="columnLeft" class="column left">
 	</div>
 	
-  <div class="column middle">
+  <div id="columnMiddle" class="column middle">
 
-	<div style="display:inline-block;background-color:rgba(0,0,0,0.1)">
-	<img src="photos/christmas_logo.jpg" style="width:100%;height:auto;margin-top:0px">
-	<div class="labelName">
-		<p id="top" class="textLabelBig"><b>WHAT WE MAKE</b></p>
+	<div style="background-color:rgba(255,255,255,0.4)">
+
+	<div>
+		<div class="slideshow-container">
+		
+		<div class="logoSlides fade">
+			<div class="numbertext">1/2</div>
+			<img id="logo_id" class="updateLogoImg" src="photos/christmas_gift.jpg">
+			<div style="background-color:black;width:50%;height:100%;position:absolute;left:65%;top:0;opacity:0.2"></div>
+			<div class="text">
+				<span style="font-size:2.5vw;color:white"><b>'Tis the season</b></span><br></br>
+				<span style="font-size:2.5vw;color:white"><b></b></span><br></br>
+				<span><em><b style="font-size:1.2vw;color:black">We offer Christmas related gift package. Special requests or custom made. Need more info?
+				Call us or DM us on instagram.</b></em></span>
+			</div>
+		</div>
+	
+		<div class="logoSlides fade">
+			<div class="numbertext">2/2</div>
+			<img id="logo2_id" class="updateLogoImg" src="photos/handmade_gift.jpg">
+			<div style="background-color:white;width:50%;height:100%;position:absolute;left:65%;top:0;opacity:0.7"></div>
+			<div class="text">
+				<span style="font-size:2.5vw;color:black"><b>Call Us!</b></span><br>
+				<span style="font-size:2.5vw;color:white"><b></b></span><br></br>
+				<span style="font-size:1.2vw"><b>Got something on your mind? Tell us! We are more than happy to turn your idea into reality.</b></span>
+			</div>
+		</div>	
+		
+		<a class="logoPrev" onclick="plusSlides2(-1)">&#10094;</a>
+		<a class="logoNext" onclick="plusSlides2(1)">&#10095;</a>
+		
+		<div style="text-align:center;left:0;right:0;bottom:0;position:absolute">
+			<span class="dot" onclick="logoCurrentSlide(1)"></span>
+			<span class="dot" onclick="logoCurrentSlide(2)"></span>
+		</div>		
+		
+		</div>
+	
+
 	</div>
-	<table style="border:0px solid black; margin-left:auto;margin-right:auto">
-		<tr>
-			<th>
-				<div>
-					<p id="rightDemo"><button id="slideBack" class="left-paddle paddle">
-					&#10094;
-					</button></p>
-				</div>
-			</th>
-			<th>
+	<div class="labelName">
+		<b id="top" class="textLabelBig">WHAT WE MAKE</b>
+	</div>
+
 				<div id="containerMenu">
 					<div id="content">
 						<div class = "gallery hover-shadow cursor">
-						<a href="#gift_box"><img src="photos/gift_box.png" style="width:12vw;height:auto"></a>
-						<div class = "desc"><p style="font-size:0.8vw">Gift Box<p></div>
+						<a href="#gift_box"><img src="photos/gift_box.png" style="width:22vh;height:auto"></a>
+						<div class = "desc"><p style="font-size:2.0vh"><b>Gift Box</b><p></div>
 						</div>
 						<div class = "gallery hover-shadow cursor">
-						<a href="#gift_cake"><img src="photos/gift_cake.png" style="width:12vw;height:auto"></a>
-						<div class = "desc"><p style="font-size:0.8vw">Gift Cake<p></div>
+						<a href="#gift_cake"><img src="photos/gift_cake.png" style="width:22vh;height:auto"></a>
+						<div class = "desc"><p style="font-size:2.0vh"><b>Gift Cake</b><p></div>
 						</div>
 						<div class = "gallery hover-shadow cursor">
-						<a href="#gift_bucket"><img src="photos/gift_bucket.png" style="width:12vw;height:auto"></a>
-						<div class = "desc"><p style="font-size:0.8vw">Gift Bucket<p></div>
+						<a href="#gift_bucket"><img src="photos/gift_bucket.png" style="width:22vh;height:auto"></a>
+						<div class = "desc"><p style="font-size:2.0vh"><b>Gift Bucket</b><p></div>
 						</div>
 						<div class = "gallery hover-shadow cursor">
-						<a href="#am_pm_board"><img src="photos/am_pm_board.png" style="width:12vw;height:auto"></a>
-						<div class = "desc"><p style="font-size:0.8vw">AM-PM Board<p></div>
+						<a href="#am_pm_board"><img src="photos/am_pm_board.png" style="width:22vh;height:auto"></a>
+						<div class = "desc"><p style="font-size:2.0vh"><b>AM-PM Board</b><p></div>
 						</div>
 						<div class = "gallery hover-shadow cursor">
-						<a href="#breakfast_tray"><img src="photos/breakfast_tray.png" style="width:12vw;height:auto"></a>
-						<div class = "desc"><p style="font-size:0.8vw">Breakfast Tray<p></div>
+						<a href="#breakfast_tray"><img src="photos/breakfast_tray.png" style="width:22vh;height:auto"></a>
+						<div class = "desc"><p style="font-size:2.0vh"><b>Breakfast Tray</b><p></div>
 						</div>
 						<div class = "gallery hover-shadow cursor">
-						<a href="#back_to_school"><img src="photos/back_to_school.png" style="width:12vw;height:auto"></a>
-						<div class = "desc"><p style="font-size:0.8vw">Back To School<p></div>
+						<a href="#back_to_school"><img src="photos/back_to_school.png" style="width:22vh;height:auto"></a>
+						<div class = "desc"><p style="font-size:2.0vh"><b>Back To School</b><p></div>
 						</div>
 						<div class = "gallery hover-shadow cursor">
-						<a href="#add"><img src="photos/add.png" style="width:12vw;height:auto"></a> 
-						<div class = "desc"><p style="font-size:0.8vw">Additional<p></div>
+						<a href="#add"><img src="photos/add.png" style="width:22vh;height:auto"></a> 
+						<div class = "desc"><p style="font-size:2.0vh"><b>Additional</b><p></div>
 						</div>					
 					</div>
 				</div>
-			</th>
-			<th>
-				<div>
-					<p id="leftDemo"><button id="slide" onmousedown="rightFunction()" class="right-paddle paddle">
-						&#10095;
-					</button></p>
-				</div>
-			</th>
-		</tr>
-	</table>
+
+	
+	
+	
+	
 	<div>
 	
 	<div class="labelName">
-	<p id="gift_box" class="textLabelBig" ><b>GIFT BOX</b></p>
+	<b id="gift_box" class="textLabelBig">GIFT BOX</b><br>
 	<a href="#top" class="textLabelSmall" >BACK TOP</a>
 	</div>
 	<div class="clearfix">
-		<img class="itemImg hover-shadow cursor" src="photos/box1.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBoxOp1();currentSlide(1)">
+		<img class="itemImg hover-shadow cursor" src="photos/box1.png" style="width:26%;height:auto;margin-right:1vw" onclick="openBoxOp1();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION #1 ($100)</b></p>
 			<li>White box</li>
@@ -448,7 +607,7 @@ img.hover-shadow {
 	</div>
 	
 	<div class="clearfix">
-		<img class="itemImg hover-shadow cursor" src="photos/box2.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBoxOp2();currentSlide(1)">
+		<img class="itemImg hover-shadow cursor" src="photos/box2.png" style="width:26%;height:auto;margin-right:1vw" onclick="openBoxOp2();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION #2 ($120)</b></p>
 			<li>White box																			</li>
@@ -464,7 +623,7 @@ img.hover-shadow {
 	</div>
 
 	<div class="clearfix">
-		<img class="itemImg hover-shadow cursor" src="photos/box3.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBoxOp3();currentSlide(1)">
+		<img class="itemImg hover-shadow cursor" src="photos/box3.png" style="width:26%;height:auto;margin-right:1vw" onclick="openBoxOp3();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION #3 ($175)</b></p>
 			<li>Heart shaped box (color customizable)</li>	
@@ -478,7 +637,7 @@ img.hover-shadow {
 	</div>
 
 	<div class="clearfix">
-		<img class="itemImg hover-shadow cursor" src="photos/box4.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBoxOp4();currentSlide(1)">
+		<img class="itemImg hover-shadow cursor" src="photos/box4.png" style="width:26%;height:auto;margin-right:1vw" onclick="openBoxOp4();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION #4 ($75)</b></p>			
 			<li>White box
@@ -492,7 +651,7 @@ img.hover-shadow {
 	</div>
 
 	<div class="clearfix">
-		<img class="itemImg hover-shadow cursor" src="photos/box5.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBoxOp5();currentSlide(1)">
+		<img class="itemImg hover-shadow cursor" src="photos/box5.png" style="width:26%;height:auto;margin-right:1vw" onclick="openBoxOp5();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION #5 ($75)</b></p>
 			<li>White box</li>		
@@ -505,7 +664,7 @@ img.hover-shadow {
 	</div>
 
 	<div class="clearfix">
-		<img class="itemImg hover-shadow cursor" src="photos/box6.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBoxOp6();currentSlide(1)">
+		<img class="itemImg hover-shadow cursor" src="photos/box6.png" style="width:26%;height:auto;margin-right:1vw" onclick="openBoxOp6();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION #6 ($125)</b></p>	
 			<li>White box</li>		
@@ -523,11 +682,11 @@ img.hover-shadow {
 	</div>
 
 	<div class="labelName">
-	<p id="gift_cake" class="textLabelBig"><b>GIFT CAKE</b></p>
+	<b id="gift_cake" class="textLabelBig">GIFT CAKE</b><br>
 	<a href="#top" class="textLabelSmall">BACK TOP</a>
 	</div>
 	<div class="clearfix">
-		<img class="itemImg hover-shadow cursor" src="photos/cake1.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openCakeOp1();currentSlide(1)">
+		<img class="itemImg hover-shadow cursor" src="photos/cake1.png" style="width:26%;height:auto;margin-right:1vw" onclick="openCakeOp1();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>BEER CAKE ($150)</b></p>			
 			<li>24 Beers</li>
@@ -541,7 +700,7 @@ img.hover-shadow {
 	</div>
 
 	<div class="clearfix">
-		<img class="itemImg hover-shadow cursor" src="photos/cake2.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openCakeOp2();currentSlide(1)">
+		<img class="itemImg hover-shadow cursor" src="photos/cake2.png" style="width:26%;height:auto;margin-right:1vw" onclick="openCakeOp2();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>DIAPER CAKE ($175)</b></p>
 			<li>3 tier cake structure</li>
@@ -556,11 +715,11 @@ img.hover-shadow {
 	</div>	
 	
 	<div class="labelName">
-	<p id="gift_bucket" class="textLabelBig"><b>GIFT BUCKET</b></p>
+	<b id="gift_bucket" class="textLabelBig">GIFT BUCKET</b><br>
 	<a href="#top" class="textLabelSmall">BACK TOP</a>
 	</div>
 	<div class="clearfix">
-		<img class="itemImg hover-shadow cursor" src="photos/gift_bucket.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBuckOp1();currentSlide(1)">
+		<img class="itemImg hover-shadow cursor" src="photos/gift_bucket.png" style="width:26%;height:auto;margin-right:1vw" onclick="openBuckOp1();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION#1 ($110)</b></p>
 			<li>Ice bucket</li>
@@ -574,7 +733,7 @@ img.hover-shadow {
 	</div>	
 
 	<div class="clearfix">
-		<img class="itemImg hover-shadow cursor" src="photos/gift_bucket.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBuckOp2();currentSlide(1)">
+		<img class="itemImg hover-shadow cursor" src="photos/gift_bucket.png" style="width:26%;height:auto;margin-right:1vw" onclick="openBuckOp2();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION#2 ($200)</b></p>			
 			<li>Ice bucket</li>
@@ -590,11 +749,11 @@ img.hover-shadow {
 	</div>		
 
 	<div class="labelName">
-	<p id="am_pm_board" class="textLabelBig"><b>AM PM BOARD</b></p>
+	<b id="am_pm_board" class="textLabelBig">AM PM BOARD</b><br>
 	<a href="#top" class="textLabelSmall">BACK TOP</a>
 	</div>
 	<div class="clearfix">
-		<img class="itemImg hover-shadow cursor" src="photos/am_pm_board.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openAmPmOp1();currentSlide(1)">
+		<img class="itemImg hover-shadow cursor" src="photos/am_pm_board.png" style="width:26%;height:auto;margin-right:1vw" onclick="openAmPmOp1();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION#1 ($125)</b></p>						
 			<li>Wooden board</li>
@@ -606,11 +765,11 @@ img.hover-shadow {
 	</div>		
 	
 	<div class="labelName">
-	<p id="breakfast_tray" class="textLabelBig"><b>BREAKFAST TRAY</b></p>
+	<b id="breakfast_tray" class="textLabelBig">BREAKFAST TRAY</b><br>
 	<a href="#top" class="textLabelSmall">BACK TOP</a>
 	</div>
 	<div class="clearfix">
-		<img class="itemImg hover-shadow cursor" src="photos/breakfast_tray.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openBreakfastOp1();currentSlide(1)">
+		<img class="itemImg hover-shadow cursor" src="photos/breakfast_tray.png" style="width:26%;height:auto;margin-right:1vw" onclick="openBreakfastOp1();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION#1 ($150)</b></p>									
 			<li>Breakfast tray</li>
@@ -627,11 +786,11 @@ img.hover-shadow {
 	</div>		
 	
 	<div class="labelName">
-	<p id="back_to_school" class="textLabelBig"><b>BACK TO SCHOOL</b></p>
+	<b id="back_to_school" class="textLabelBig">BACK TO SCHOOL</b><br>
 	<a href="#top" class="textLabelSmall">BACK TOP</a>
 	</div>
 	<div class="clearfix">
-		<img class="itemImg hover-shadow cursor" src="photos/back_to_school.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openSchoolOp1();currentSlide(1)">
+		<img class="itemImg hover-shadow cursor" src="photos/back_to_school.png" style="width:26%;height:auto;margin-right:1vw" onclick="openSchoolOp1();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>OPTION#1 ($125)</b></p>												
 			<li>White box decorated as an animal (personalized name on box)</li>
@@ -647,11 +806,11 @@ img.hover-shadow {
 	</div>		
 	
 	<div class="labelName">
-	<p id="add" class="textLabelBig"><b>ADDITIONAL</b></p>
+	<b id="add" class="textLabelBig">ADDITIONAL</b><br>
 	<a href="#top" class="textLabelSmall">BACK TOP</a>
 	</div>
 	<div class="clearfix">
-		<img class="itemImg hover-shadow cursor" src="photos/add.png" style="width:15vw;height:auto;margin-right:1vw" onclick="openAddOp1();currentSlide(1)">
+		<img class="itemImg hover-shadow cursor" src="photos/add.png" style="width:26%;height:auto;margin-right:1vw" onclick="openAddOp1();currentSlide(1)">
 		<div class="txt_align">
 			<p><b>+$25</b></p>												
 			<li>CREAM CHEESE SWIRLED COCONUT TRES LECHES CAKE</li>
@@ -661,7 +820,7 @@ img.hover-shadow {
 	</div>	
 	
   </div>
-  <div class="column right">
+  <div id="columnRight" class="column right">
   </div>
 </div>
 
@@ -707,40 +866,10 @@ img.hover-shadow {
 
 
 <footer class="footer">
-	<b style="font-size:2.1vw">Contact Us</b>
-	<br>
-	<b style="font-size:1.1vw">Mobile: (416) 274-6759 | Mobile: (647) 573-1821 | Email: suzzgifts@gmail.com | Instagram @suzz_gifts</b>
+
 </footer>
 
 <script>
- document.getElementById('leftDemo').addEventListener("mousedown", mouseDown);
-//button.onmousedown = function () {
-function mouseDown(){
-    var containerMenu = document.getElementById('containerMenu');
-    sideScroll(containerMenu,'right',25,100,10);
-};
-
-document.getElementById('rightDemo').addEventListener("mouseup",mouseUp);
-//back.onmousedown = function () {
-function mouseUp(){
-    var containerMenu = document.getElementById('containerMenu');
-    sideScroll(containerMenu,'left',25,100,10);
-};
-
-function sideScroll(element,direction,speed,distance,step){
-    scrollAmount = 0;
-    var slideTimer = setInterval(function(){
-        if(direction == 'left'){
-            element.scrollLeft -= step;
-        } else {
-            element.scrollLeft += step;
-        }
-        scrollAmount += step;
-        if(scrollAmount >= distance){
-            window.clearInterval(slideTimer);
-        }
-    }, speed);
-}
 
 //individual item image gallery start
 function openBoxOp1() {
@@ -918,6 +1047,79 @@ function showSlides(n) {
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
 
+//update logo slideshow 
+
+var logoSlideIndex = 1;
+logoShowSlides(logoSlideIndex);
+var totalSlides = document.getElementsByClassName("logoSlides");
+setInterval(function(){
+	if (logoSlideIndex == 1){
+		logoSlideIndex = 2;
+		logoShowSlides(logoSlideIndex);
+	}else{
+		logoSlideIndex = 1;
+		logoShowSlides(logoSlideIndex);
+	}	
+ console.log(logoSlideIndex); 
+ }, 8000);
+
+function logoSlideAdd(){
+	var slides = document.getElementsByClassName("logoSlides");
+	console.log(slides);
+}
+
+console.log(logoSlideIndex);
+function plusSlides2(n){
+	logoShowSlides(logoSlideIndex += n);
+}
+function logoCurrentSlide(n){
+	logoShowSlides(logoSlideIndex = n);
+}
+function logoShowSlides(n){
+	var i;
+	var slides = document.getElementsByClassName("logoSlides");
+	var dots = document.getElementsByClassName("dot");
+	if(n > slides.length){logoSlideIndex = 1}
+	if(n < 1) {logoSlideIndex = slides.length}
+	for (i = 0; i < slides.length; i++){
+		slides[i].style.display = "none";
+	}
+	for (i = 0; i < dots.length; i++){
+		dots[i].className = dots[i].className.replace(" logoactive", "");
+	}
+	slides[logoSlideIndex-1].style.display = "block";
+	dots[logoSlideIndex-1].className += " logoactive";
+}
+
+//change columns width based on the total width of viewport
+var viewPortWidth = screen.width;
+if (viewPortWidth < 500){
+	var portWidth = viewPortWidth + "px";
+	var logoImg = document.getElementById('logo_id');
+	var logo2Img = document.getElementById('logo2_id');
+	document.getElementById("columnLeft").style.width = '0%';
+	document.getElementById("columnMiddle").style.width = '100%';
+	document.getElementById("columnRight").style.width = '0%';
+	document.getElementById("head").style.width = "portWidth";
+	logoImg.style.width = '100%';
+	logoImg.style.height = '150px';
+	logo2Img.style.width = '100%';
+	logo2Img.style.height = '150px';
+	
+	
+}else{
+	var logoImg = document.getElementById('logo_id');
+	var logo2Img = document.getElementById('logo2_id');
+	document.getElementById("columnLeft").style.width = '16%';
+	document.getElementById("columnMiddle").style.width = '68%';
+	document.getElementById("columnRight").style.width = '16%';	
+	document.getElementById("head").style.width = "68%";
+	logoImg.style.width = '100%';
+	logoImg.style.height = '500px';
+	logo2Img.style.width = '100%';
+	logo2Img.style.height = '500px';	
+	
+}
 
 
 </script>
